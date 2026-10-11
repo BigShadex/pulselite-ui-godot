@@ -1,0 +1,23 @@
+; Engine configuration file.
+; Demo project for the PulseLite UI addon. Only addons/pulselite_ui/ is needed in your own project.
+
+config_version=5
+
+[application]
+
+config/name="PulseLite UI Sounds (demo)"
+run/main_scene="res://demo/demo.tscn"
+config/features=PackedStringArray("4.7")
+
+[autoload]
+
+PulseLiteUI="*res://addons/pulselite_ui/PulseLiteUI.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/pulselite_ui/plugin.cfg")

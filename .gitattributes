@@ -1,0 +1,22 @@
+# Normalize text files to LF
+* text=auto eol=lf
+
+# Binary assets
+*.wav binary
+*.ogg binary
+*.png binary
+*.jpg binary
+
+# Godot text formats
+*.gd text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.godot text eol=lf
+*.cfg text eol=lf
+*.uid text eol=lf
+*.import text eol=lf
+
+# Keep the Asset Store / GitHub "Download ZIP" archive limited to the addon and demo
+/docs export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
