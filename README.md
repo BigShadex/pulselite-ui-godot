@@ -88,3 +88,8 @@ documentation were written with AI assistance, then tested and reviewed.
 - Free sample with a playable browser demo: https://bigshadex.itch.io/pulselite-ui-sfx-free
 - Need more variations? The paid 200-sound PulseLite kit (15-16 variations per event, OGG copies,
   Unity script) uses the same file names and API: https://bigshadex.itch.io/pulselite-ui-sfx
+  (40% off until 30 Oct 2026)
+- Themed packs with the same 14 event names, so this autoload works unchanged:
+  [Sci-Fi UI](https://bigshadex.itch.io/pulselite-scifi-ui) (104 holographic sounds) and
+  [Horror UI](https://bigshadex.itch.io/pulselite-horror-ui) (104 eerie sounds), or all three in
+  [PulseLite Complete](https://bigshadex.itch.io/pulselite-complete)
