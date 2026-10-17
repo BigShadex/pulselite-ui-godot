@@ -1,5 +1,7 @@
 # PulseLite UI Sounds for Godot 4
 
+**Try the sounds in your browser:** [PulseLite UI Sound Previewer](https://bigshadex.github.io/pulselite-previewer/), a mock game menu playing all 20 free sounds.
+
 A small Godot 4 addon that gives your menus consistent interface sounds in one line of code.
 It ships an autoload (`PulseLiteUI`) and 20 matching UI sounds: click, hover, toggle,
 confirm, back, error, notification, panel open/close, transition, coin, reward and level up.
@@ -84,6 +86,8 @@ envelopes). No recorded samples, sample libraries or AI-generated audio. The GDS
 documentation were written with AI assistance, then tested and reviewed.
 
 ## Links
+
+- Browser previewer: https://bigshadex.github.io/pulselite-previewer/
 
 - Free sample with a playable browser demo: https://bigshadex.itch.io/pulselite-ui-sfx-free
 - Need more variations? The paid 200-sound PulseLite kit (15-16 variations per event, OGG copies,

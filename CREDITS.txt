@@ -1,0 +1,9 @@
+PulseLite UI SFX (free sample) - credits
+
+The 20 sounds are licensed CC BY 4.0, so your game needs a credit line.
+Copy this into your game's credits:
+
+Sounds: PulseLite UI SFX by Bigshadex (CC BY 4.0) https://bigshadex.itch.io/pulselite-ui-sfx-free
+
+Scripts (PulseLiteUI.gd, plugin.gd) are MIT and need no credit in-game.
+Full kit (200+ sounds, Sci-Fi and Horror themes): https://bigshadex.itch.io/pulselite-ui-sfx
