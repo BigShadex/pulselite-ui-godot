@@ -1,0 +1,41 @@
+name: Maaack preset integration
+
+on:
+  pull_request:
+    paths:
+      - 'addons/pulselite_ui/**'
+      - 'tests/**'
+      - '.github/workflows/maaack-preset.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: maaack-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-godot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        godot: ['4.3', '4.7']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Fetch checksum-pinned QA dependencies
+        env:
+          GODOT_VERSION: ${{ matrix.godot }}
+        run: python tests/fetch_maaack_qa.py --godot-version "$GODOT_VERSION" --output "$RUNNER_TEMP/pulselite-qa"
+      - name: Import and test the optional preset and standalone addon
+        env:
+          GODOT_VERSION: ${{ matrix.godot }}
+        run: >-
+          python tests/run_maaack_checks.py
+          --godot "$RUNNER_TEMP/pulselite-qa/Godot_v$GODOT_VERSION-stable_linux.x86_64"
+          --controller-source "$RUNNER_TEMP/pulselite-qa/maaack/ui_sound_controller.gd"

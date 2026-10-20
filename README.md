@@ -65,6 +65,10 @@ Sounds: 44.1 kHz, 16-bit, mono WAV, loudness-matched, peaks at or below -1 dBFS.
 
 ## Demo
 
+Optional: [PulseLite Free preset for Maaack's UI Sound Controller](addons/pulselite_ui/integrations/maaack/README.md)
+adds ready-made stream assignments to Maaack's existing controller. That scene
+requires Maaack's plugin; the standard PulseLite addon remains independent.
+
 Open this repository as a Godot project and run it. `demo/demo.tscn` shows one button per
 event, wired with a single `PulseLiteUI.wire_buttons(self)` call. Only `addons/pulselite_ui/`
 is needed in your own project.
