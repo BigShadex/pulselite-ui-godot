@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://addons/maaacks_ui_sound_controller/base/scripts/ui_sound_controller.gd" id="1_controller"]
+[ext_resource type="AudioStream" path="res://addons/pulselite_ui/sounds/hover/hover_01.wav" id="2_hover"]
+[ext_resource type="AudioStream" path="res://addons/pulselite_ui/sounds/click/click_03.wav" id="3_click"]
+[ext_resource type="AudioStream" path="res://addons/pulselite_ui/sounds/click/click_09.wav" id="4_type"]
+[ext_resource type="AudioStream" path="res://addons/pulselite_ui/sounds/confirm/confirm_05.wav" id="5_confirm"]
+[ext_resource type="AudioStream" path="res://addons/pulselite_ui/sounds/error/error_01.wav" id="6_error"]
+
+[node name="PulseLiteFreeUISoundController" type="Node"]
+process_mode = 3
+script = ExtResource("1_controller")
+audio_bus = &"Master"
+button_hovered = ExtResource("2_hover")
+button_focused = ExtResource("2_hover")
+button_pressed = ExtResource("3_click")
+tab_hovered = ExtResource("2_hover")
+tab_changed = ExtResource("3_click")
+slider_hovered = ExtResource("2_hover")
+slider_focused = ExtResource("2_hover")
+slider_drag_started = ExtResource("3_click")
+slider_drag_ended = ExtResource("5_confirm")
+line_hovered = ExtResource("2_hover")
+line_focused = ExtResource("2_hover")
+line_text_changed = ExtResource("4_type")
+line_text_submitted = ExtResource("5_confirm")
+line_text_change_rejected = ExtResource("6_error")
+item_list_selected = ExtResource("3_click")
+item_list_activated = ExtResource("5_confirm")
+tree_item_selected = ExtResource("3_click")
+tree_item_activated = ExtResource("5_confirm")
+tree_button_clicked = ExtResource("3_click")
