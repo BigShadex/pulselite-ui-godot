@@ -73,6 +73,22 @@ Open this repository as a Godot project and run it. `demo/demo.tscn` shows one b
 event, wired with a single `PulseLiteUI.wire_buttons(self)` call. Only `addons/pulselite_ui/`
 is needed in your own project.
 
+## Tests
+
+The native headless checks run the addon without Maaack and then verify the optional Maaack
+preset. The standalone checks use a disposable project with the real `PulseLiteUI` autoload
+registered and cover button signals, metadata overrides, toggles, playback settings, and
+safe missing-event or missing-file results. CI runs both checks on Godot 4.3 and 4.7.
+
+On Linux or WSL, fetch the checksum-pinned QA inputs and run one engine version like this:
+
+```sh
+python3 tests/fetch_maaack_qa.py --godot-version 4.7 --output /tmp/pulselite-qa
+python3 tests/run_maaack_checks.py \
+  --godot /tmp/pulselite-qa/Godot_v4.7-stable_linux.x86_64 \
+  --controller-source /tmp/pulselite-qa/maaack/ui_sound_controller.gd
+```
+
 ## Licenses
 
 - **Code** (`plugin.gd`, `PulseLiteUI.gd`, `ui_events.json`, the demo): MIT, see [LICENSE](LICENSE).
