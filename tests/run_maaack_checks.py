@@ -12,7 +12,9 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 CONTROLLER_SHA256 = "4c5322427bbc31bf3460e1c5027e32743938fbc1f53536c7e70cfccdff2ce616"
 CONTROLLER_RELATIVE = Path("addons/maaacks_ui_sound_controller/base/scripts/ui_sound_controller.gd")
-PROJECT = 'config_version=5\n[application]\nconfig/name="PulseLite integration QA"\nconfig/features=PackedStringArray("4.3")\n'
+PROJECT = ('config_version=5\n[application]\nconfig/name="PulseLite integration QA"\n'
+           'config/features=PackedStringArray("4.3")\n')
+STANDALONE_PROJECT = PROJECT + '[autoload]\nPulseLiteUI="*res://addons/pulselite_ui/PulseLiteUI.gd"\n'
 
 
 def run(godot, project, *arguments, marker=None):
@@ -43,12 +45,14 @@ def main():
     with tempfile.TemporaryDirectory(prefix="pulselite-maaack-") as folder:
         project = Path(folder)
         shutil.copytree(ROOT / "addons/pulselite_ui", project / "addons/pulselite_ui")
-        (project / "project.godot").write_text(PROJECT, encoding="utf-8")
+        (project / "project.godot").write_text(STANDALONE_PROJECT, encoding="utf-8")
         shutil.copy(ROOT / "tests/test_addon_standalone.gd", project)
         # The optional preset must not break users who never install Maaack.
         run(godot, project, "--editor", "--import")
         run(godot, project, "--script", "res://test_addon_standalone.gd", marker="PASS standalone")
 
+        # Keep this autoload fixture out of the existing Maaack integration leg.
+        (project / "project.godot").write_text(PROJECT, encoding="utf-8")
         target = project / CONTROLLER_RELATIVE
         target.parent.mkdir(parents=True)
         shutil.copy(source, target)
