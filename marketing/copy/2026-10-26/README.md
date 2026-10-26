@@ -3,7 +3,7 @@
 For the existing products only; no live copy, price or licence changes. GrokBot retains review, merge and publishing ownership.
 
 - [CDX-B1: Complete sound list and three opening lines](complete-whats-in-the-box.md)
-- [CDX-B3: three Menu Kit title options and browser-verified search counts](menu-kit-title-options.md)
+- [CDX-B3: three Menu Kit title options and browser-observed catalogue facet counts](menu-kit-title-options.md)
 - [CDX-B5: Game Off 2026 provisional draft and publication gates](game-off-2026-draft.md)
 
 ## Exact Complete artifact and scope
