@@ -1,0 +1,128 @@
+{
+  "godot_version": "4.7.stable.official.5b4e0cb0f",
+  "display_renderer": "WSLg X11 / OpenGL compatibility; Mesa 25.2.8 llvmpipe software renderer",
+  "input_method": "Synthetic Godot viewport mouse events",
+  "audio_driver": "Dummy; event/resource loads verified, audible playback not tested",
+  "gallery_assets": {
+    "Sci-Fi": [
+      {
+        "name": "01-hover.png",
+        "bytes": 103638,
+        "sha256": "cad48a6ebb28f7f557b37c8d55b4d98a8cdbaf844c53584a94e5364ee5d057d1",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "02-confirm.png",
+        "bytes": 103935,
+        "sha256": "c8bd47a3e2bedac15d1b3a5b90ad01e05744ac88b4fc1945cea89766131012c4",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "03-toggle-on.png",
+        "bytes": 103082,
+        "sha256": "3343e83cc5d6b455516e920ff900f0e10f173b4a674f3d7dc3e3fca1a8388f6f",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "sci-fi-gallery.gif",
+        "bytes": 907576,
+        "sha256": "64fe8a21aa44617c05839dabae0548b275cde0de44c2ae3ef0d2f18dd775abaf",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "GIF",
+        "frames": 8,
+        "duration_ms": 7600,
+        "silent": true
+      }
+    ],
+    "Horror": [
+      {
+        "name": "01-hover.png",
+        "bytes": 102981,
+        "sha256": "29e61ae3d3f20015563978742362faf7829b9eac52d727a681a923135d36ba98",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "02-confirm.png",
+        "bytes": 103449,
+        "sha256": "07f5a6fbb445d9a9f84351133d7db1226baeac45d03a11868d346bbf61331f27",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "03-toggle-on.png",
+        "bytes": 102681,
+        "sha256": "1885608a2c10f8b238d533f288c4b82aa631e92acfd706d9068630a8ed50e4c1",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "PNG"
+      },
+      {
+        "name": "horror-gallery.gif",
+        "bytes": 602782,
+        "sha256": "17789d1dd198ba260672be0c4c0bb6023dbbd3425c1d705cabd84e66c1e5ed52",
+        "dimensions": [
+          630,
+          953
+        ],
+        "format": "GIF",
+        "frames": 8,
+        "duration_ms": 7600,
+        "silent": true
+      }
+    ]
+  },
+  "video": {
+    "name": "pulselite-ui-themes-demo.mp4",
+    "bytes": 2630852,
+    "sha256": "6e7d6f0c0c57433244fb021a4b76a180039177e15de431d205a92602c51c95f4",
+    "duration_seconds": 44.2,
+    "video_tracks": 1,
+    "audio_tracks": 0,
+    "codec": "avc1",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "handlers": [
+      "vide"
+    ],
+    "frames": 442,
+    "fps": 10,
+    "segment_order": [
+      "Menu Kit",
+      "Sci-Fi",
+      "Horror"
+    ],
+    "silent": true
+  },
+  "source_audio_included": false,
+  "video_segment_order": [
+    "Menu Kit",
+    "Sci-Fi",
+    "Horror"
+  ]
+}
