@@ -11,7 +11,7 @@ Every asset has a clearly visible **Illustrative example** badge and the existin
 | `menu-kit-03-menu-back.png` | 630 × 953 | 163,530 |
 | `menu-kit-gallery.gif` | 630 × 953; 9 frames; 7.6 seconds; silent loop | 1,004,494 |
 
-The label, full menu/button context, and receipt text were inspected at the assets' native 630-pixel width. The still contact sheet and three keyframe contact sheets (covering all nine GIF frames) were also opened at 630-pixel width; each frame retains its actual event/file caption, the **Illustrative example** badge, and the no-game-UI caveat. The events were exercised through synthetic Godot viewport input in the source capture. This is not physical-pointer testing or an audible playback check.
+The label, full menu/button context, and receipt text were inspected at the assets' native 630-pixel width. The still contact sheet and three keyframe contact sheets (covering all nine GIF frames) were also opened at 630-pixel width; each frame retains its actual event/file caption, the **Illustrative example** badge, and the no-game-UI caveat. The events were exercised through synthetic Godot viewport input in the source capture, using Godot's Dummy audio driver. This is not physical-pointer testing or an audible playback check.
 
 Sound attribution: **PulseLite UI SFX by Bigshadex** ([free sample](https://bigshadex.itch.io/pulselite-ui-sfx-free)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [`LICENSE-SOUNDS`](../../../LICENSE-SOUNDS) for the complete attribution terms.
 
