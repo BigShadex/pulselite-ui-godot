@@ -4,4 +4,4 @@
 
 The illustrative interface is not part of the sound packs. Sound effects use procedural DSP. Code, video and text were AI-assisted. The 1280×720 PNG is a separate horizontal thumbnail design for the Short. Waveform checks do not establish physical listening; parent review and the later owner/GB watch-through remain separate acceptance steps.
 
-See `../youtube-20261028/README.md` for the generic rebuild command. Keep licensed pack ZIPs, OGG sources and full private receipts outside the repository. Curated final encoded frames and sanitized technical results are in `../redo-review-20261027/final-encoded/`.
+See `../youtube-20261028/README.md` for the generic rebuild command. Keep licensed pack ZIPs, OGG sources and full private receipts outside the repository. Curated final encoded frames and sanitized technical results are in `../polish-review-20261028/final-encoded/`.

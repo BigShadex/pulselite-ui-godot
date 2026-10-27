@@ -6,10 +6,11 @@
     {
       "video": "pulselite-menu-kit-14-events",
       "duration_ms": 60000,
+      "title_card_end_ms": 2500,
       "audio_note": "The timestamps are edit placements for source OGG composition, not newly captured live signal events.",
       "events": [
         {
-          "time_ms": 1989,
+          "time_ms": 2800,
           "source_pack": "menu-kit",
           "scene": "menu",
           "event": "button_click",
@@ -202,10 +203,11 @@
     {
       "video": "pulselite-sci-fi-ui-sounds",
       "duration_ms": 30000,
+      "title_card_end_ms": 2500,
       "audio_note": "The timestamps are edit placements for source OGG composition, not newly captured live signal events.",
       "events": [
         {
-          "time_ms": 2700,
+          "time_ms": 2800,
           "source_pack": "sci-fi-rerun1",
           "scene": "menu",
           "event": "button_hover",
@@ -335,10 +337,11 @@
     {
       "video": "pulselite-horror-ui-sounds",
       "duration_ms": 30000,
+      "title_card_end_ms": 2500,
       "audio_note": "The timestamps are edit placements for source OGG composition, not newly captured live signal events.",
       "events": [
         {
-          "time_ms": 2700,
+          "time_ms": 2800,
           "source_pack": "horror",
           "scene": "menu",
           "event": "button_hover",
@@ -468,10 +471,11 @@
     {
       "video": "pulselite-menu-scifi-horror-short",
       "duration_ms": 25000,
+      "title_card_end_ms": 2500,
       "audio_note": "The timestamps are edit placements for source OGG composition, not newly captured live signal events.",
       "events": [
         {
-          "time_ms": 1600,
+          "time_ms": 2800,
           "source_pack": "menu-kit",
           "scene": "menu",
           "event": "button_click",
