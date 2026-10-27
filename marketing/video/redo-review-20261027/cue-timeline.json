@@ -1,0 +1,796 @@
+{
+  "format": 1,
+  "audio_note": "Source OGG cues are composition inputs; this is not a new live capture.",
+  "public_path_rule": "All source paths are relative to the private staged pack root; no local absolute paths are stored.",
+  "menu_kit": {
+    "duration_ms": 60000,
+    "closing_card_start_ms": 55000,
+    "source_pack": "menu-kit",
+    "cuts": [
+      {
+        "start_ms": 0,
+        "end_ms": 8628,
+        "scene": "hook/menu"
+      },
+      {
+        "start_ms": 8628,
+        "end_ms": 16639,
+        "scene": "settings"
+      },
+      {
+        "start_ms": 16639,
+        "end_ms": 22804,
+        "scene": "menu"
+      },
+      {
+        "start_ms": 22804,
+        "end_ms": 29846,
+        "scene": "shop/notification"
+      },
+      {
+        "start_ms": 29846,
+        "end_ms": 37005,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 37005,
+        "end_ms": 44026,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 44026,
+        "end_ms": 47590,
+        "scene": "reward"
+      },
+      {
+        "start_ms": 47590,
+        "end_ms": 48450,
+        "scene": "level-up"
+      },
+      {
+        "start_ms": 48450,
+        "end_ms": 49310,
+        "scene": "menu"
+      },
+      {
+        "start_ms": 49310,
+        "end_ms": 50170,
+        "scene": "menu"
+      },
+      {
+        "start_ms": 50170,
+        "end_ms": 51030,
+        "scene": "settings"
+      },
+      {
+        "start_ms": 51030,
+        "end_ms": 51890,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 51890,
+        "end_ms": 52750,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 52750,
+        "end_ms": 53610,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 53610,
+        "end_ms": 55000,
+        "scene": "reward"
+      },
+      {
+        "start_ms": 55000,
+        "end_ms": 60000,
+        "scene": "endcard"
+      }
+    ],
+    "events": [
+      {
+        "time_ms": 1989,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "button_click",
+        "source_relpath": "audio/pulselite/click/click_03.ogg",
+        "caption": "button_click  →  click_03.ogg",
+        "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef"
+      },
+      {
+        "time_ms": 6164,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "button_hover",
+        "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+        "caption": "button_hover  →  hover_01.ogg",
+        "source_sha256": "06f8b1bbdc8457da69a9343bd6ab72358412d951963d2a25107e177b488b3bd5"
+      },
+      {
+        "time_ms": 8628,
+        "source_pack": "menu-kit",
+        "scene": "settings",
+        "event": "toggle_on",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "caption": "toggle_on  →  toggle_01.ogg",
+        "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4"
+      },
+      {
+        "time_ms": 12118,
+        "source_pack": "menu-kit",
+        "scene": "settings",
+        "event": "toggle_off",
+        "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+        "caption": "toggle_off  →  toggle_02.ogg",
+        "source_sha256": "1afa835bbf72abda5e464887e75c0116968266822f4915ffdc9fd59dd02eb8f9"
+      },
+      {
+        "time_ms": 16639,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "menu_confirm",
+        "source_relpath": "audio/pulselite/confirm/confirm_05.ogg",
+        "caption": "menu_confirm  →  confirm_05.ogg",
+        "source_sha256": "fc165262cb583159d3a1d9d783740b0b37346fc44de436ec85d7848848f9cb4f"
+      },
+      {
+        "time_ms": 19236,
+        "source_pack": "menu-kit",
+        "scene": "settings",
+        "event": "menu_back",
+        "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+        "caption": "menu_back  →  back_cancel_01.ogg",
+        "source_sha256": "6bd2be70cd01f052c28d9129113f05536419ba9c46b0ada24c0a9497774ed98d"
+      },
+      {
+        "time_ms": 22804,
+        "source_pack": "menu-kit",
+        "scene": "shop",
+        "event": "error",
+        "source_relpath": "audio/pulselite/error/error_01.ogg",
+        "caption": "error  →  error_01.ogg",
+        "source_sha256": "b883972bcb6d4ba9b9592ce1107ff4d852e509fcd3d0471370208b8d3842a930"
+      },
+      {
+        "time_ms": 26259,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "notification",
+        "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+        "caption": "notification  →  notify_02.ogg",
+        "source_sha256": "bd204550a1243c831495992c9a1f56c27dd10d436bc88a43bd420edb92af613c"
+      },
+      {
+        "time_ms": 29846,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "panel_open",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "caption": "panel_open  →  panel_open_04.ogg",
+        "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660"
+      },
+      {
+        "time_ms": 34162,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "panel_close",
+        "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+        "caption": "panel_close  →  panel_close_05.ogg",
+        "source_sha256": "bdda745af4f202b14d1797feaa74ff78b657881aec7e6747b6f5ebab6db19062"
+      },
+      {
+        "time_ms": 37005,
+        "source_pack": "menu-kit",
+        "scene": "gameplay",
+        "event": "transition",
+        "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+        "caption": "transition  →  whoosh_06.ogg",
+        "source_sha256": "51f0913fe0834c79aec5196f54f4b4cdff969b73df7123021f00fd9aa8111474"
+      },
+      {
+        "time_ms": 40431,
+        "source_pack": "menu-kit",
+        "scene": "gameplay",
+        "event": "coin_pickup",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "caption": "coin_pickup  →  coin_01.ogg",
+        "source_sha256": "491408fd727328ed7413d34f60bcadca728b053e342cd400e14e395df18f2676"
+      },
+      {
+        "time_ms": 44026,
+        "source_pack": "menu-kit",
+        "scene": "reward",
+        "event": "reward",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "caption": "reward  →  reward_05.ogg",
+        "source_sha256": "92f4c4cb0d8c0d925a039d3c9f492f17ad22ee135200671ed22f1d26973c5b9a"
+      },
+      {
+        "time_ms": 47590,
+        "source_pack": "menu-kit",
+        "scene": "level-up",
+        "event": "level_up",
+        "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+        "caption": "level_up  →  level_up_01.ogg",
+        "source_sha256": "cd1b23cf07b08f83029d9d410ae9513bc6581c8186646f69da670d47a7b75bdd"
+      },
+      {
+        "time_ms": 48450,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "button_click",
+        "source_relpath": "audio/pulselite/click/click_03.ogg",
+        "caption": "button_click  →  click_03.ogg",
+        "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 49310,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "button_hover",
+        "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+        "caption": "button_hover  →  hover_01.ogg",
+        "source_sha256": "06f8b1bbdc8457da69a9343bd6ab72358412d951963d2a25107e177b488b3bd5",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 50170,
+        "source_pack": "menu-kit",
+        "scene": "settings",
+        "event": "toggle_on",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "caption": "toggle_on  →  toggle_01.ogg",
+        "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 51030,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "panel_open",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "caption": "panel_open  →  panel_open_04.ogg",
+        "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 51890,
+        "source_pack": "menu-kit",
+        "scene": "gameplay",
+        "event": "coin_pickup",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "caption": "coin_pickup  →  coin_01.ogg",
+        "source_sha256": "491408fd727328ed7413d34f60bcadca728b053e342cd400e14e395df18f2676",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 52750,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "notification",
+        "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+        "caption": "notification  →  notify_02.ogg",
+        "source_sha256": "bd204550a1243c831495992c9a1f56c27dd10d436bc88a43bd420edb92af613c",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      },
+      {
+        "time_ms": 53610,
+        "source_pack": "menu-kit",
+        "scene": "reward",
+        "event": "reward",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "caption": "reward  →  reward_05.ogg",
+        "source_sha256": "92f4c4cb0d8c0d925a039d3c9f492f17ad22ee135200671ed22f1d26973c5b9a",
+        "composition_note": "Repeated mapped source cue in the rapid-fire montage; not an additional distinct event type."
+      }
+    ],
+    "rapid_fire": {
+      "start_ms": 47590,
+      "end_ms": 55000,
+      "repeated_cues": 7,
+      "cadence_ms": 860,
+      "note": "Eight rapid mapped cue/action changes including the original level_up cue at 47590ms."
+    }
+  },
+  "sci-fi": {
+    "duration_ms": 30000,
+    "closing_card_start_ms": 26000,
+    "source_pack": "sci-fi-rerun1",
+    "cuts": [
+      {
+        "start_ms": 0,
+        "end_ms": 2700,
+        "scene": "hook/menu"
+      },
+      {
+        "start_ms": 2700,
+        "end_ms": 6900,
+        "scene": "menu"
+      },
+      {
+        "start_ms": 6900,
+        "end_ms": 8500,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 8500,
+        "end_ms": 10500,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 10500,
+        "end_ms": 12300,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 12300,
+        "end_ms": 14000,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 14000,
+        "end_ms": 18400,
+        "scene": "settings"
+      },
+      {
+        "start_ms": 18400,
+        "end_ms": 22200,
+        "scene": "shop"
+      },
+      {
+        "start_ms": 22200,
+        "end_ms": 24400,
+        "scene": "reward"
+      },
+      {
+        "start_ms": 24400,
+        "end_ms": 26000,
+        "scene": "level-up"
+      },
+      {
+        "start_ms": 26000,
+        "end_ms": 30000,
+        "scene": "endcard"
+      }
+    ],
+    "events": [
+      {
+        "time_ms": 2700,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "menu",
+        "event": "button_hover",
+        "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+        "caption": "button_hover  →  hover_01.ogg",
+        "source_sha256": "aba5137f54ef0956c8dc10f2a62fc543328b4286ce9f9f32c1c28dc796fef53e"
+      },
+      {
+        "time_ms": 3500,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "menu",
+        "event": "button_click",
+        "source_relpath": "audio/pulselite/click/click_01.ogg",
+        "caption": "button_click  →  click_01.ogg",
+        "source_sha256": "4d32f4c42d9e82b7b30282d5cb053bdf3380d65868345374debea60c261aefec"
+      },
+      {
+        "time_ms": 4300,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "menu",
+        "event": "menu_confirm",
+        "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+        "caption": "menu_confirm  →  confirm_01.ogg",
+        "source_sha256": "41e6d8e1289d75cdbab75f621d34215c9bb395a2176dbe12d76de9d9845427ae"
+      },
+      {
+        "time_ms": 6900,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "gameplay",
+        "event": "transition",
+        "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+        "caption": "transition  →  whoosh_06.ogg",
+        "source_sha256": "c98c66044b4d4d6816f025662eb382325d227061d4ffe21085aa34b41c6d010c"
+      },
+      {
+        "time_ms": 8500,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "inventory",
+        "event": "panel_open",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "caption": "panel_open  →  panel_open_04.ogg",
+        "source_sha256": "c0a8fda5e65033d66cd53f341e8f28b5ee1f6c5e7a31b8b81c9cf03172d94f19"
+      },
+      {
+        "time_ms": 10500,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "gameplay",
+        "event": "coin_pickup",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "caption": "coin_pickup  →  coin_01.ogg",
+        "source_sha256": "084b8b0d40ff5497af7437b744f94ffd41908cd16c30652ea7fe429b7f3ac056"
+      },
+      {
+        "time_ms": 12300,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "inventory",
+        "event": "panel_close",
+        "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+        "caption": "panel_close  →  panel_close_05.ogg",
+        "source_sha256": "d1ecf49bce5f29457d976325ad7a482ba37cf3c21399e2773824c161ef025d50"
+      },
+      {
+        "time_ms": 14000,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "settings",
+        "event": "toggle_on",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "caption": "toggle_on  →  toggle_01.ogg",
+        "source_sha256": "065125b0540bbcc7a6319b715f4ad28cfaf3876ba44044343afc959f2a4e9298"
+      },
+      {
+        "time_ms": 15400,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "settings",
+        "event": "toggle_off",
+        "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+        "caption": "toggle_off  →  toggle_02.ogg",
+        "source_sha256": "ca06a26542b365d6ecaa4e9b8bac6bcb6a060b17e08cfac1e148634482e717d3"
+      },
+      {
+        "time_ms": 16800,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "settings",
+        "event": "menu_back",
+        "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+        "caption": "menu_back  →  back_cancel_01.ogg",
+        "source_sha256": "d548f10c1f435b90808fee5e389d46a01cb64f4b1463ce0f890ad7f0faf99825"
+      },
+      {
+        "time_ms": 18400,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "shop",
+        "event": "error",
+        "source_relpath": "audio/pulselite/error/error_01.ogg",
+        "caption": "error  →  error_01.ogg",
+        "source_sha256": "93dbd6eec9755110eaa0d89777bc1ce17757c78c4f37319a1599eb4ea0a592e5"
+      },
+      {
+        "time_ms": 20100,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "shop",
+        "event": "notification",
+        "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+        "caption": "notification  →  notify_02.ogg",
+        "source_sha256": "ea02b26d1dcf5894fccf512a4dce43acb08045d0404ea229a53f9312df084230"
+      },
+      {
+        "time_ms": 22200,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "reward",
+        "event": "reward",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "caption": "reward  →  reward_05.ogg",
+        "source_sha256": "392a63b7cc712cae3fb337383c1274d2622e3a6695b49af9b5504b5c483fb563"
+      },
+      {
+        "time_ms": 24400,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "level-up",
+        "event": "level_up",
+        "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+        "caption": "level_up  →  level_up_01.ogg",
+        "source_sha256": "233192fc3306e4d2d16b3db7ff933e7ccaa41d370f7aa2d9d1cf8ea32d9b5f7d"
+      }
+    ]
+  },
+  "horror": {
+    "duration_ms": 30000,
+    "closing_card_start_ms": 26000,
+    "source_pack": "horror",
+    "cuts": [
+      {
+        "start_ms": 0,
+        "end_ms": 2700,
+        "scene": "hook/menu"
+      },
+      {
+        "start_ms": 2700,
+        "end_ms": 6900,
+        "scene": "menu"
+      },
+      {
+        "start_ms": 6900,
+        "end_ms": 8500,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 8500,
+        "end_ms": 10500,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 10500,
+        "end_ms": 12300,
+        "scene": "gameplay"
+      },
+      {
+        "start_ms": 12300,
+        "end_ms": 14000,
+        "scene": "inventory"
+      },
+      {
+        "start_ms": 14000,
+        "end_ms": 18400,
+        "scene": "settings"
+      },
+      {
+        "start_ms": 18400,
+        "end_ms": 22200,
+        "scene": "shop"
+      },
+      {
+        "start_ms": 22200,
+        "end_ms": 24400,
+        "scene": "reward"
+      },
+      {
+        "start_ms": 24400,
+        "end_ms": 26000,
+        "scene": "level-up"
+      },
+      {
+        "start_ms": 26000,
+        "end_ms": 30000,
+        "scene": "endcard"
+      }
+    ],
+    "events": [
+      {
+        "time_ms": 2700,
+        "source_pack": "horror",
+        "scene": "menu",
+        "event": "button_hover",
+        "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+        "caption": "button_hover  →  hover_01.ogg",
+        "source_sha256": "e59ea86973daee94a03532fe0e4a666b8e8b4ec3d6f102ec79d87bea21f2a5cd"
+      },
+      {
+        "time_ms": 3500,
+        "source_pack": "horror",
+        "scene": "menu",
+        "event": "button_click",
+        "source_relpath": "audio/pulselite/click/click_01.ogg",
+        "caption": "button_click  →  click_01.ogg",
+        "source_sha256": "ea3cc729627d8c5173d072c59b7aa3d5ff75ec5202127e8b0d0ffa37ec5bd02b"
+      },
+      {
+        "time_ms": 4300,
+        "source_pack": "horror",
+        "scene": "menu",
+        "event": "menu_confirm",
+        "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+        "caption": "menu_confirm  →  confirm_01.ogg",
+        "source_sha256": "54a42715cffe88cf2890cf10056f2f43bcec6fab5535391abf52fd8ab6593669"
+      },
+      {
+        "time_ms": 6900,
+        "source_pack": "horror",
+        "scene": "gameplay",
+        "event": "transition",
+        "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+        "caption": "transition  →  whoosh_06.ogg",
+        "source_sha256": "a871613804c9f41d81816ef7d0964bab6cfbc34551918d6f97c8fb00d010fdb1"
+      },
+      {
+        "time_ms": 8500,
+        "source_pack": "horror",
+        "scene": "inventory",
+        "event": "panel_open",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "caption": "panel_open  →  panel_open_04.ogg",
+        "source_sha256": "42cf18f1a2219be9dba993624de08024a9a40e853444ab007ae480d9eb744785"
+      },
+      {
+        "time_ms": 10500,
+        "source_pack": "horror",
+        "scene": "gameplay",
+        "event": "coin_pickup",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "caption": "coin_pickup  →  coin_01.ogg",
+        "source_sha256": "a81197d5c70ae60898f8b4528e14b9f1bced55594044beae8e4bd986244a7483"
+      },
+      {
+        "time_ms": 12300,
+        "source_pack": "horror",
+        "scene": "inventory",
+        "event": "panel_close",
+        "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+        "caption": "panel_close  →  panel_close_05.ogg",
+        "source_sha256": "30277630055bd0cf3717de42f80d1c875e8576ce16fbfd5b2917e6c5e3fd30dd"
+      },
+      {
+        "time_ms": 14000,
+        "source_pack": "horror",
+        "scene": "settings",
+        "event": "toggle_on",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "caption": "toggle_on  →  toggle_01.ogg",
+        "source_sha256": "9ae9df6cd759a9f282d2d83f72bee33de88a3bab2ecaed0ddcfec23343db2417"
+      },
+      {
+        "time_ms": 15400,
+        "source_pack": "horror",
+        "scene": "settings",
+        "event": "toggle_off",
+        "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+        "caption": "toggle_off  →  toggle_02.ogg",
+        "source_sha256": "281d03f47e156168901c3984974cd112e909097b33e6386d34d64a08cfa5832a"
+      },
+      {
+        "time_ms": 16800,
+        "source_pack": "horror",
+        "scene": "settings",
+        "event": "menu_back",
+        "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+        "caption": "menu_back  →  back_cancel_01.ogg",
+        "source_sha256": "7a2acc4f21255a79b3bc64614fd01b3b7e2a14a7f3a69160ee6af00679f46d87"
+      },
+      {
+        "time_ms": 18400,
+        "source_pack": "horror",
+        "scene": "shop",
+        "event": "error",
+        "source_relpath": "audio/pulselite/error/error_01.ogg",
+        "caption": "error  →  error_01.ogg",
+        "source_sha256": "a7b47958c7744d0ff3e5d625f881aafc37f98eda0edca2281e93c435fd3ce87f"
+      },
+      {
+        "time_ms": 20100,
+        "source_pack": "horror",
+        "scene": "shop",
+        "event": "notification",
+        "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+        "caption": "notification  →  notify_02.ogg",
+        "source_sha256": "11a334de5bcce0dbeb7dba91b8750c1824b232669a4b688dc996e21af0be9247"
+      },
+      {
+        "time_ms": 22200,
+        "source_pack": "horror",
+        "scene": "reward",
+        "event": "reward",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "caption": "reward  →  reward_05.ogg",
+        "source_sha256": "e5dc5cb8c5c09c8d0be28c3885de36171612c069f064fe4e6c3782f0dd93a5f6"
+      },
+      {
+        "time_ms": 24400,
+        "source_pack": "horror",
+        "scene": "level-up",
+        "event": "level_up",
+        "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+        "caption": "level_up  →  level_up_01.ogg",
+        "source_sha256": "87905df97eea80ce0a0d4d9b8bec2e8d46211dd9674696ae7132a99581cade4c"
+      }
+    ]
+  },
+  "short": {
+    "duration_ms": 25000,
+    "endcard_start_ms": 22000,
+    "cuts": [
+      {
+        "start_ms": 0,
+        "end_ms": 4200,
+        "scene": "menu-kit menu"
+      },
+      {
+        "start_ms": 4200,
+        "end_ms": 7400,
+        "scene": "menu-kit settings/inventory"
+      },
+      {
+        "start_ms": 7400,
+        "end_ms": 9200,
+        "scene": "sci-fi menu"
+      },
+      {
+        "start_ms": 9200,
+        "end_ms": 14800,
+        "scene": "sci-fi gameplay/level-up"
+      },
+      {
+        "start_ms": 14800,
+        "end_ms": 22000,
+        "scene": "horror shop/reward/settings"
+      },
+      {
+        "start_ms": 22000,
+        "end_ms": 25000,
+        "scene": "endcard"
+      }
+    ],
+    "events": [
+      {
+        "time_ms": 1600,
+        "source_pack": "menu-kit",
+        "scene": "menu",
+        "event": "button_click",
+        "source_relpath": "audio/pulselite/click/click_03.ogg",
+        "caption": "button_click  →  click_03.ogg",
+        "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef"
+      },
+      {
+        "time_ms": 4200,
+        "source_pack": "menu-kit",
+        "scene": "settings",
+        "event": "toggle_on",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "caption": "toggle_on  →  toggle_01.ogg",
+        "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4"
+      },
+      {
+        "time_ms": 7000,
+        "source_pack": "menu-kit",
+        "scene": "inventory",
+        "event": "panel_open",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "caption": "panel_open  →  panel_open_04.ogg",
+        "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660"
+      },
+      {
+        "time_ms": 9200,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "menu",
+        "event": "menu_confirm",
+        "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+        "caption": "menu_confirm  →  confirm_01.ogg",
+        "source_sha256": "41e6d8e1289d75cdbab75f621d34215c9bb395a2176dbe12d76de9d9845427ae"
+      },
+      {
+        "time_ms": 11600,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "gameplay",
+        "event": "coin_pickup",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "caption": "coin_pickup  →  coin_01.ogg",
+        "source_sha256": "084b8b0d40ff5497af7437b744f94ffd41908cd16c30652ea7fe429b7f3ac056"
+      },
+      {
+        "time_ms": 13700,
+        "source_pack": "sci-fi-rerun1",
+        "scene": "level-up",
+        "event": "level_up",
+        "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+        "caption": "level_up  →  level_up_01.ogg",
+        "source_sha256": "233192fc3306e4d2d16b3db7ff933e7ccaa41d370f7aa2d9d1cf8ea32d9b5f7d"
+      },
+      {
+        "time_ms": 16100,
+        "source_pack": "horror",
+        "scene": "shop",
+        "event": "error",
+        "source_relpath": "audio/pulselite/error/error_01.ogg",
+        "caption": "error  →  error_01.ogg",
+        "source_sha256": "a7b47958c7744d0ff3e5d625f881aafc37f98eda0edca2281e93c435fd3ce87f"
+      },
+      {
+        "time_ms": 18300,
+        "source_pack": "horror",
+        "scene": "reward",
+        "event": "reward",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "caption": "reward  →  reward_05.ogg",
+        "source_sha256": "e5dc5cb8c5c09c8d0be28c3885de36171612c069f064fe4e6c3782f0dd93a5f6"
+      },
+      {
+        "time_ms": 20400,
+        "source_pack": "horror",
+        "scene": "settings",
+        "event": "menu_back",
+        "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+        "caption": "menu_back  →  back_cancel_01.ogg",
+        "source_sha256": "7a2acc4f21255a79b3bc64614fd01b3b7e2a14a7f3a69160ee6af00679f46d87"
+      }
+    ]
+  }
+}

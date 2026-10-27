@@ -1,0 +1,154 @@
+{
+  "checked_at_utc": "2026-10-27T12:19:31.276160+00:00",
+  "status": "TECHNICAL_QA_PASS",
+  "method": "Parent independently decoded final H264/AAC MP4s and source OGGs, verified source hashes and event categories, and matched each cue within an 80ms window. Full muted browser playback completed for all four.",
+  "limits": "No physical listening or GB creative acceptance claimed. Menus are illustrative and not included; audio is a source-recording postproduction composition. No upload authorised by this receipt.",
+  "files": [
+    {
+      "file": "youtube-20261028/pulselite-menu-kit-14-events.mp4",
+      "sha256": "382cfc25a28a30abf00f8428a11201aa5af5ad72c9117ddfce176ae940b96e20",
+      "duration_seconds": 60,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "decoded_video_frames": 1800,
+      "mapped_cue_placements": 21,
+      "minimum_source_correlation": 0.9127361372618875,
+      "maximum_absolute_offset_ms": 0.3750000000000142,
+      "decoded_audio_peak": 0.3839019536972046
+    },
+    {
+      "file": "youtube-20261028/pulselite-sci-fi-ui-sounds.mp4",
+      "sha256": "b264378d7d7516e1ff811c57de608b5dc5b1c84b5fba9dfd9eb6338663d074dd",
+      "duration_seconds": 30,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "decoded_video_frames": 900,
+      "mapped_cue_placements": 14,
+      "minimum_source_correlation": 0.9790624629512883,
+      "maximum_absolute_offset_ms": 3.6041666666668526,
+      "decoded_audio_peak": 0.421975702047348
+    },
+    {
+      "file": "youtube-20261028/pulselite-horror-ui-sounds.mp4",
+      "sha256": "712079acde63f9ec5fb064aad93ecb1254012e8514ec59a61d65cb826a50815a",
+      "duration_seconds": 30,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "decoded_video_frames": 900,
+      "mapped_cue_placements": 14,
+      "minimum_source_correlation": 0.9973386294685911,
+      "maximum_absolute_offset_ms": 3.552713678800501e-12,
+      "decoded_audio_peak": 0.4908560514450073
+    },
+    {
+      "file": "shorts/pulselite-menu-scifi-horror-short.mp4",
+      "sha256": "09f797a46c3d860d00fa853d638bd572eb6a86bac10db92a63bba9ada8e2344e",
+      "duration_seconds": 25,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "decoded_video_frames": 750,
+      "mapped_cue_placements": 9,
+      "minimum_source_correlation": 0.9136730561826736,
+      "maximum_absolute_offset_ms": 0.3750000000000142,
+      "decoded_audio_peak": 0.4580692648887634
+    }
+  ],
+  "final_encoded_frames": [
+    {
+      "file": "menu_kit-05.0s.jpg",
+      "video": "youtube-20261028/pulselite-menu-kit-14-events.mp4",
+      "video_sha256": "382cfc25a28a30abf00f8428a11201aa5af5ad72c9117ddfce176ae940b96e20",
+      "time_seconds": 5.0,
+      "image_sha256": "4b7edc7b7d99d93032d52643184c32a1e56e24130d4ee0b81f610abc6c66ec53",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "menu_kit-57.0s.jpg",
+      "video": "youtube-20261028/pulselite-menu-kit-14-events.mp4",
+      "video_sha256": "382cfc25a28a30abf00f8428a11201aa5af5ad72c9117ddfce176ae940b96e20",
+      "time_seconds": 57.0,
+      "image_sha256": "52d5870ecff136d84f2884d4e13ec7edb401d6e791bcd9957f5439ea98cebd22",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "sci-fi-15.0s.jpg",
+      "video": "youtube-20261028/pulselite-sci-fi-ui-sounds.mp4",
+      "video_sha256": "b264378d7d7516e1ff811c57de608b5dc5b1c84b5fba9dfd9eb6338663d074dd",
+      "time_seconds": 15.0,
+      "image_sha256": "61dc8e7af546c49bfc7eef6868df3e146b6e5ab91115a51c078cb0bdec39b3ef",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "sci-fi-28.0s.jpg",
+      "video": "youtube-20261028/pulselite-sci-fi-ui-sounds.mp4",
+      "video_sha256": "b264378d7d7516e1ff811c57de608b5dc5b1c84b5fba9dfd9eb6338663d074dd",
+      "time_seconds": 28.0,
+      "image_sha256": "8148d22d01b41241f2359ad65b9f4baddf33ed83de646f9b5fc46ee47a4f56b8",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "horror-15.0s.jpg",
+      "video": "youtube-20261028/pulselite-horror-ui-sounds.mp4",
+      "video_sha256": "712079acde63f9ec5fb064aad93ecb1254012e8514ec59a61d65cb826a50815a",
+      "time_seconds": 15.0,
+      "image_sha256": "85b124c6336a4e56f399b4fa1652ca71bb5861afaac4332e2d95595137734bb9",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "horror-28.0s.jpg",
+      "video": "youtube-20261028/pulselite-horror-ui-sounds.mp4",
+      "video_sha256": "712079acde63f9ec5fb064aad93ecb1254012e8514ec59a61d65cb826a50815a",
+      "time_seconds": 28.0,
+      "image_sha256": "aa4d88813acfc6e174d6eba8d5fcbecc5ca98e1ee5003586e95d07df85ee1231",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "short-04.0s.jpg",
+      "video": "shorts/pulselite-menu-scifi-horror-short.mp4",
+      "video_sha256": "09f797a46c3d860d00fa853d638bd572eb6a86bac10db92a63bba9ada8e2344e",
+      "time_seconds": 4.0,
+      "image_sha256": "5e3ce6e589e7c773f14ce39563950fcf685e5c2f4d60dd8b1f4426ba49383892",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "file": "short-23.5s.jpg",
+      "video": "shorts/pulselite-menu-scifi-horror-short.mp4",
+      "video_sha256": "09f797a46c3d860d00fa853d638bd572eb6a86bac10db92a63bba9ada8e2344e",
+      "time_seconds": 23.5,
+      "image_sha256": "ccd7bba000bae7d4f9aec367ad598cd29924b35099e19bd66e87ea76b6bd344d",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    }
+  ]
+}

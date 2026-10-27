@@ -1,0 +1,548 @@
+{
+  "format": 1,
+  "creative_note": "Clean illustrative game menus, drawn with Pillow primitives; no prior captures used.",
+  "landscape_frames": [
+    {
+      "file": "01-title-menu.jpg",
+      "pack": "sci-fi",
+      "scene": "hook",
+      "cue": {
+        "event": "button_hover",
+        "filename": "hover_01.ogg",
+        "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+        "source_sha256": "aba5137f54ef0956c8dc10f2a62fc543328b4286ce9f9f32c1c28dc796fef53e"
+      },
+      "bounds": {
+        "main_panel": [
+          480,
+          300,
+          1440,
+          815
+        ],
+        "button_play": [
+          610,
+          390,
+          1310,
+          480
+        ],
+        "button_settings": [
+          610,
+          486,
+          1310,
+          576
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "02-menu-kit-main-menu.jpg",
+      "pack": "menu-kit",
+      "scene": "menu",
+      "cue": {
+        "event": "button_click",
+        "filename": "click_03.ogg",
+        "source_relpath": "audio/pulselite/click/click_03.ogg",
+        "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef"
+      },
+      "bounds": {
+        "main_panel": [
+          480,
+          300,
+          1440,
+          815
+        ],
+        "button_play": [
+          610,
+          390,
+          1310,
+          480
+        ],
+        "button_settings": [
+          610,
+          486,
+          1310,
+          576
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "03-sci-fi-settings.jpg",
+      "pack": "sci-fi",
+      "scene": "settings",
+      "cue": {
+        "event": "toggle_on",
+        "filename": "toggle_01.ogg",
+        "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+        "source_sha256": "065125b0540bbcc7a6319b715f4ad28cfaf3876ba44044343afc959f2a4e9298"
+      },
+      "bounds": {
+        "settings_panel": [
+          420,
+          262,
+          1500,
+          820
+        ],
+        "toggle_ui": [
+          1130,
+          440,
+          1370,
+          516
+        ],
+        "toggle_ambience": [
+          1130,
+          578,
+          1370,
+          654
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "04-horror-shop.jpg",
+      "pack": "horror",
+      "scene": "shop",
+      "cue": {
+        "event": "error",
+        "filename": "error_01.ogg",
+        "source_relpath": "audio/pulselite/error/error_01.ogg",
+        "source_sha256": "a7b47958c7744d0ff3e5d625f881aafc37f98eda0edca2281e93c435fd3ce87f"
+      },
+      "bounds": {
+        "shop_panel": [
+          270,
+          255,
+          1650,
+          820
+        ],
+        "shop_cards": [
+          [
+            340,
+            390,
+            700,
+            735
+          ],
+          [
+            755,
+            390,
+            1115,
+            735
+          ],
+          [
+            1170,
+            390,
+            1530,
+            735
+          ]
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "05-menu-kit-inventory.jpg",
+      "pack": "menu-kit",
+      "scene": "inventory",
+      "cue": {
+        "event": "panel_open",
+        "filename": "panel_open_04.ogg",
+        "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+        "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660"
+      },
+      "bounds": {
+        "inventory_panel": [
+          300,
+          245,
+          1620,
+          820
+        ],
+        "inventory_slots": [
+          [
+            370,
+            370,
+            710,
+            540
+          ],
+          [
+            760,
+            370,
+            1100,
+            540
+          ],
+          [
+            1150,
+            370,
+            1490,
+            540
+          ],
+          [
+            370,
+            575,
+            710,
+            745
+          ],
+          [
+            760,
+            575,
+            1100,
+            745
+          ],
+          [
+            1150,
+            575,
+            1490,
+            745
+          ]
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "06-sci-fi-gameplay.jpg",
+      "pack": "sci-fi",
+      "scene": "gameplay",
+      "cue": {
+        "event": "coin_pickup",
+        "filename": "coin_01.ogg",
+        "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+        "source_sha256": "084b8b0d40ff5497af7437b744f94ffd41908cd16c30652ea7fe429b7f3ac056"
+      },
+      "bounds": {
+        "gameplay_viewport": [
+          210,
+          235,
+          1710,
+          820
+        ],
+        "pickup_toast": [
+          1295,
+          660,
+          1620,
+          725
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "07-horror-reward.jpg",
+      "pack": "horror",
+      "scene": "reward",
+      "cue": {
+        "event": "reward",
+        "filename": "reward_05.ogg",
+        "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+        "source_sha256": "e5dc5cb8c5c09c8d0be28c3885de36171612c069f064fe4e6c3782f0dd93a5f6"
+      },
+      "bounds": {
+        "reward_panel": [
+          450,
+          245,
+          1470,
+          820
+        ],
+        "reward_item": [
+          765,
+          440,
+          1155,
+          650
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "08-sci-fi-rapid-level-up.jpg",
+      "pack": "sci-fi",
+      "scene": "level-up",
+      "cue": {
+        "event": "level_up",
+        "filename": "level_up_01.ogg",
+        "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+        "source_sha256": "233192fc3306e4d2d16b3db7ff933e7ccaa41d370f7aa2d9d1cf8ea32d9b5f7d"
+      },
+      "bounds": {
+        "level_up_panel": [
+          390,
+          255,
+          1530,
+          808
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "09-menu-kit-endcard.jpg",
+      "pack": "menu-kit",
+      "scene": "endcard",
+      "cue": null,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "10-sci-fi-endcard.jpg",
+      "pack": "sci-fi",
+      "scene": "endcard",
+      "cue": null,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "11-horror-endcard.jpg",
+      "pack": "horror",
+      "scene": "endcard",
+      "cue": null,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "portrait_frames": [
+    {
+      "file": "short-portrait-menu.jpg",
+      "pack": "menu-kit",
+      "cue": "button_click  \u2192  click_03.ogg",
+      "bounds": {
+        "main_panel": [
+          90,
+          560,
+          890,
+          1190
+        ],
+        "button_play": [
+          100,
+          590,
+          880,
+          730
+        ],
+        "caption": [
+          80,
+          1208,
+          900,
+          1358
+        ]
+      },
+      "size": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "file": "short-portrait-sci-fi-settings.jpg",
+      "pack": "sci-fi",
+      "cue": "toggle_on  \u2192  toggle_01.ogg",
+      "bounds": {
+        "settings_panel": [
+          90,
+          485,
+          890,
+          1125
+        ],
+        "caption": [
+          80,
+          1208,
+          900,
+          1358
+        ]
+      },
+      "size": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "file": "short-portrait-horror-menu.jpg",
+      "pack": "horror",
+      "cue": "error  \u2192  error_01.ogg",
+      "bounds": {
+        "main_panel": [
+          90,
+          560,
+          890,
+          1190
+        ],
+        "button_play": [
+          100,
+          590,
+          880,
+          730
+        ],
+        "caption": [
+          80,
+          1208,
+          900,
+          1358
+        ]
+      },
+      "size": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "file": "short-portrait-endcard.jpg",
+      "pack": "menu-kit",
+      "cue": null,
+      "bounds": {
+        "pack_links": [
+          90,
+          424,
+          890,
+          750
+        ],
+        "preview_link": [
+          90,
+          790,
+          890,
+          1088
+        ],
+        "caption": null
+      },
+      "size": [
+        1080,
+        1920
+      ]
+    }
+  ],
+  "readability": [
+    "readability-landscape-640x360.png",
+    "readability-portrait-360x640.png",
+    "readability-portrait-endcard-360x640.png",
+    "readability-endcards-640x360.png"
+  ],
+  "cue_timeline": "cue-timeline.json"
+}

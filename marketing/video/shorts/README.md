@@ -1,7 +1,7 @@
-# Vertical YouTube short
+# Vertical YouTube Short
 
-`pulselite-menu-scifi-horror-short.mp4` is a 25-second 1080x1920 H.264/AAC cut that moves from the Menu Kit capture to Sci-Fi and Horror. Its event captions and included sound sections map to the private Godot `played(event, path)` traces. The soundtrack is postproduced from the exact trace-mapped source recordings and placed at the displayed signal times; the captured Godot WAV is private QA evidence, not the final soundtrack. This is encoded-waveform and trace-timing evidence, not a physical listening or human-input test.
+`pulselite-menu-scifi-horror-short.mp4` is a 25-second native 1080×1920 H.264/AAC edit with code-drawn vertical menu scenes for Menu Kit, Sci-Fi and Horror. It contains nine on-screen event captions naming the mapped OGG files and uses the corresponding source-pack recordings in a postproduction composition. It is not a new live Godot capture or a newly captured `played(event, path)` trace. The last scene is an end card; the previewer and three product destinations also appear in the metadata.
 
-The sound effects are procedurally DSP-generated and the video was prepared with AI assistance. The illustrated Godot interface is not part of the packs. The closing card contains the previewer and all three pack links. `pulselite-menu-scifi-horror-short.metadata.md` holds the title, description, and tags; the PNG is a landscape thumbnail source.
+The illustrative interface is not part of the sound packs. Sound effects use procedural DSP. Code, video and text were AI-assisted. The 1280×720 PNG is a separate horizontal thumbnail design for the Short. Waveform checks do not establish physical listening; parent review and the later owner/GB watch-through remain separate acceptance steps.
 
-See `../youtube-20261028/README.md` for the generic private rebuild commands. Keep licensed pack ZIPs, capture sequences, WAVs, and receipts outside the repository.
+See `../youtube-20261028/README.md` for the generic rebuild command. Keep licensed pack ZIPs, OGG sources and full private receipts outside the repository. Curated final encoded frames and sanitized technical results are in `../redo-review-20261027/final-encoded/`.
