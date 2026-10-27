@@ -1,34 +1,25 @@
-# YouTube demo assets
+# PulseLite video drafts
 
-This folder holds three ready-to-review H.264/AAC demos, 1280x720 PNG thumbnails, per-video metadata drafts, and generic capture/render scripts. The paired vertical short and its metadata are in `../shorts/`.
+This folder contains three landscape H.264/AAC demo drafts, their 1280×720 thumbnails and YouTube metadata. The paired vertical Short is in `../shorts/`. The files are prepared for review and are not published automatically.
 
-The videos use exact source-pack recordings staged privately from the selected licensed ZIPs. `capture_godot.py` imports those recordings into a disposable Godot project, captures the illustrative UI, records the addon's `played(event, path)` signal, and preserves the Godot `AudioEffectRecord` mix as private QA evidence. The UI replay is scripted. A disposable copy disables random variation and pitch jitter so each event uses the deterministic recommended-file route; the source pack ZIP and repository addon remain untouched.
+Each video uses code-drawn illustrative game menus, which are not included with the sound packs. The soundtrack is a postproduction composition from the named source-pack OGG recordings, placed at the edit-map times and encoded as AAC. Captions show the event label and exact OGG basename. These videos do not claim a new Godot capture or newly captured `played(event, path)` signal. The Menu Kit cut contains all 14 mapped event types and repeats seven mapped cues in a rapid final montage, for 21 total cue placements. Sci-Fi and Horror each contain 14 mapped cues. The public `cue-manifest.json` lists edit placements, relative source paths and source hashes; licensed audio and absolute source paths stay private.
 
-The final soundtrack is postproduced from the exact staged OGG named by each `played` trace row. Each clip is placed at that row's captured `elapsed_ms`, so the displayed signal and sound start together without Dummy-driver clock drift. Repeated signal rows are all mixed, with an 8 ms edge fade and a deterministic per-event gain; a single global gain is applied only if needed to keep the mix peak at or below 0.90. The original captured Godot WAV is not used as the final soundtrack. Private receipts record each source hash, signal time, placement, gain, fades, PCM hash, and encoded checks. This demonstrates encoded waveform and trace alignment, not physical listening or human input. The sound effects are procedurally DSP-generated; video preparation used AI assistance. The illustrative Godot UI is not included with the sound packs.
-
-Each video ends with the applicable itch.io product link and the public sound previewer. Metadata drafts are separate `.metadata.md` files so titles, descriptions, and tags can be copied into a future YouTube upload. Nothing in this folder is published automatically.
+The sound effects use procedural DSP. Code, video and text were AI-assisted. Encoded-waveform checks do not establish physical listening or human input. Parent review and the later owner/GB watch-through remain separate acceptance steps.
 
 ## Rebuild
 
-Use private, licensed pack ZIPs and fresh directories outside the repository. The capture script takes a Godot Linux executable path as WSL sees it; the Python and archive/output paths remain native Windows paths.
+Use the existing private pack project roots and existing PyAV module. Build into fresh output and evidence folders outside the repository, then promote only after review. The renderer refuses to overwrite MP4s.
 
 ```powershell
-$godot = '/mnt/c/path/to/Godot_v4.7-stable_linux.x86_64'
-python marketing/video/youtube-20261028/capture_godot.py `
-  --archive <PRIVATE_MENU_KIT_ZIP> --pack-label 'Menu Kit' --mode menu14 --duration 52 `
-  --godot $godot --output-root <FRESH_PRIVATE_MENU_CAPTURE>
-python marketing/video/youtube-20261028/capture_godot.py `
-  --archive <PRIVATE_SCI-FI_ZIP> --pack-label Sci-Fi --mode ui --duration 20 `
-  --godot $godot --output-root <FRESH_PRIVATE_SCI-FI_CAPTURE>
-python marketing/video/youtube-20261028/capture_godot.py `
-  --archive <PRIVATE_HORROR_ZIP> --pack-label Horror --mode ui --duration 20 `
-  --godot $godot --output-root <FRESH_PRIVATE_HORROR_CAPTURE>
-python marketing/video/youtube-20261028/render_media.py `
-  --menu-capture <PRIVATE_MENU_CAPTURE> --sci-fi-capture <PRIVATE_SCI-FI_CAPTURE> `
-  --horror-capture <PRIVATE_HORROR_CAPTURE> `
-  --youtube-output marketing/video/youtube-20261028 `
-  --shorts-output marketing/video/shorts `
-  --pyav-path <EXISTING_PYAV_MODULE_DIRECTORY> --private-output <PRIVATE_RECEIPT_DIRECTORY>
+python marketing/video/youtube-20261028/render_illustrative_demos.py `
+  --menu-root <PRIVATE_MENU_KIT_PROJECT_ROOT> `
+  --sci-fi-root <PRIVATE_SCI-FI_PROJECT_ROOT> `
+  --horror-root <PRIVATE_HORROR_PROJECT_ROOT> `
+  --pyav-path <EXISTING_PYAV_MODULE_DIRECTORY> `
+  --landscape-output <FRESH_PRIVATE_LANDSCAPE_OUTPUT> `
+  --short-output <FRESH_PRIVATE_SHORT_OUTPUT> `
+  --private-receipt <PRIVATE_RECEIPT_DIRECTORY> `
+  --review-output <PRIVATE_REVIEW_DIRECTORY>
 ```
 
-The render script expects Pillow, NumPy, SciPy, and PyAV in the selected Python environment. Capture receipts, WAVs, private frame sequences, staged OGG files, and pack ZIPs should stay outside Git. Thumbnails and metadata can be regenerated alongside fresh output files; the scripts refuse to overwrite existing MP4s.
+The current replacement media uses `render_illustrative_demos.py`; `capture_godot.py` and `render_media.py` remain from an earlier rejected draft and do not produce these files. Keep source packs, OGG files, capture material and full private render receipts outside Git. A curated set of final encoded frames and sanitized technical results is in `../redo-review-20261027/final-encoded/`; top-level stills there are earlier design checkpoints.
