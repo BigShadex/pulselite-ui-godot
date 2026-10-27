@@ -13,7 +13,9 @@ import hashlib
 import importlib.util
 import json
 import math
+import os
 import sys
+sys.dont_write_bytecode = True
 from fractions import Fraction
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterator
@@ -25,7 +27,12 @@ FPS = 30
 RATE = 48_000
 BASE_GAIN = 0.55
 FADE_MS = 8
-PEAK_LIMIT = 0.90
+TRUE_PEAK_OVERSAMPLE = 4
+TARGET_TRUE_PEAK_DBTP = -1.0
+TARGET_TRUE_PEAK = 10 ** (TARGET_TRUE_PEAK_DBTP / 20.0)
+GLOBAL_GAIN_MIN = 0.25
+GLOBAL_GAIN_MAX = 16.0
+TITLE_CARD_END_MS = 2500
 H_SIZE = (1920, 1080)
 V_SIZE = (1080, 1920)
 REVIEW_SAMPLES = (0,)
@@ -96,9 +103,13 @@ def load_timeline(path: Path) -> dict[str, Any]:
         raise ValueError(f"Unsupported edit timeline format: {obj.get('format')}")
     expected = {"menu_kit": 21, "sci-fi": 14, "horror": 14, "short": 9}
     for key, count in expected.items():
-        entries = obj[key]["events"]
+        data = obj[key]
+        entries = data["events"]
         if len(entries) != count:
             raise ValueError(f"{key} has {len(entries)} cues; expected {count}")
+        title_end = int(data.get("title_card_end_ms", -1))
+        if title_end != TITLE_CARD_END_MS:
+            raise ValueError(f"{key} title card ends at {title_end}ms; expected {TITLE_CARD_END_MS}ms")
         previous = -1
         for row in entries:
             ms = int(row["time_ms"])
@@ -107,8 +118,12 @@ def load_timeline(path: Path) -> dict[str, Any]:
             previous = ms
             if not str(row["source_relpath"]).lower().endswith(".ogg"):
                 raise ValueError(f"Cue is not mapped to an OGG: {row}")
+        if int(entries[0]["time_ms"]) < title_end + 200:
+            raise ValueError(f"{key} first cue overlaps or crowds its standalone title card")
+        card_start = int(data.get("closing_card_start_ms", data.get("endcard_start_ms", data["duration_ms"])))
+        if int(data["duration_ms"]) - card_start < 3000:
+            raise ValueError(f"{key} endcard dwell is shorter than 3 seconds")
     return obj
-
 
 def safe_source(root: Path, relpath: str) -> Path:
     rel = PurePosixPath(relpath)
@@ -142,8 +157,18 @@ def decode_ogg(av, np, path: Path) -> Any:
     return np.concatenate(chunks, axis=0)
 
 
+def estimate_true_peak(np, audio: Any, factor: int = TRUE_PEAK_OVERSAMPLE) -> float:
+    """Estimate inter-sample peak with deterministic polyphase oversampling."""
+    from scipy.signal import resample_poly
+    if audio.size == 0:
+        return 0.0
+    signal = np.asarray(audio, dtype=np.float32)
+    oversampled = resample_poly(signal, factor, 1, axis=0, window=("kaiser", 8.6), padtype="line")
+    return float(np.max(np.abs(oversampled)))
+
+
 def mix_track(av, np, rows: list[dict[str, Any]], roots: dict[str, Path],
-              duration_ms: int) -> tuple[Any, list[dict[str, Any]], float]:
+              duration_ms: int) -> tuple[Any, list[dict[str, Any]], float, dict[str, float]]:
     sample_count = duration_ms * RATE // 1000
     mix = np.zeros((sample_count, 2), dtype=np.float32)
     staged: list[tuple[dict[str, Any], Any, dict[str, Any]]] = []
@@ -179,10 +204,22 @@ def mix_track(av, np, rows: list[dict[str, Any]], roots: dict[str, Path],
             "tail_truncated": used != source_len, "sample_rate": RATE,
             "base_gain": BASE_GAIN, "fade_samples_each_edge": fade_samples,
         }))
-    raw_peak = float(np.max(np.abs(mix))) if mix.size else 0.0
-    global_gain = min(1.0, PEAK_LIMIT / raw_peak) if raw_peak > 0 else 1.0
-    if global_gain < 1.0:
-        mix *= global_gain
+    raw_sample_peak = float(np.max(np.abs(mix))) if mix.size else 0.0
+    raw_true_peak = estimate_true_peak(np, mix)
+    requested_gain = TARGET_TRUE_PEAK / max(raw_true_peak, 1e-12)
+    global_gain = min(GLOBAL_GAIN_MAX, max(GLOBAL_GAIN_MIN, requested_gain))
+    mix *= global_gain
+    final_true_peak = estimate_true_peak(np, mix)
+    final_true_peak_db = 20.0 * math.log10(max(final_true_peak, 1e-12))
+    if abs(final_true_peak_db - TARGET_TRUE_PEAK_DBTP) > 0.05:
+        raise ValueError(f"Bounded global gain cannot reach target true peak: {final_true_peak_db:.3f} dBTP")
+    level = {"raw_sample_peak": raw_sample_peak, "raw_oversampled_true_peak": raw_true_peak,
+             "requested_global_gain": requested_gain, "global_gain": global_gain,
+             "final_pcm_sample_peak": float(np.max(np.abs(mix))),
+             "final_pcm_oversampled_true_peak": final_true_peak,
+             "final_pcm_oversampled_true_peak_dbtp": final_true_peak_db,
+             "target_true_peak_dbtp": TARGET_TRUE_PEAK_DBTP,
+             "oversample_factor": TRUE_PEAK_OVERSAMPLE}
     events: list[dict[str, Any]] = []
     for row, processed, data in staged:
         data["global_gain"] = global_gain
@@ -190,8 +227,7 @@ def mix_track(av, np, rows: list[dict[str, Any]], roots: dict[str, Path],
         data["processed_source_pcm_sha256"] = hashlib.sha256(processed.astype("<f4", copy=False).tobytes()).hexdigest()
         data["processed_peak_before_global_gain"] = float(np.max(np.abs(processed))) if processed.size else 0.0
         events.append(data)
-    return mix, events, global_gain
-
+    return mix, events, global_gain, level
 
 def event_map_at(events: list[dict[str, Any]], time_ms: int) -> dict[str, Any] | None:
     current = None
@@ -209,16 +245,18 @@ def frame_state_at(timeline: dict[str, Any], section: str, time_ms: int,
     rows = data["events"]
     endcard_ms = int(data.get("endcard_start_ms", data.get("closing_card_start_ms", data["duration_ms"])))
     first_pack = normalize_pack(str(rows[0]["source_pack"])) if rows else "menu-kit"
+    title_end = int(data.get("title_card_end_ms", TITLE_CARD_END_MS))
+    if time_ms < title_end:
+        return first_pack, "title-card", None, None
     if time_ms >= endcard_ms:
-        # The vertical Short intentionally uses its combined three-pack card.
-        # Landscape end cards belong to the pack featured by that video.
-        return ("menu-kit" if portrait else first_pack, "endcard", None, None)
+        if portrait:
+            return "menu-kit", "endcard", None, None
+        return first_pack, "endcard", None, None
     latest = event_map_at(rows, time_ms)
     if latest is None:
-        return first_pack, "hook", None, None
+        return first_pack, "menu", None, None
     return (normalize_pack(str(latest["source_pack"])), str(latest["scene"]),
             str(latest["event"]), PurePosixPath(str(latest["source_relpath"])).name)
-
 
 def render_frame_state(renderer, state: tuple[str, str, str | None, str | None],
                        portrait: bool = False) -> Image.Image:
@@ -229,6 +267,32 @@ def render_frame_state(renderer, state: tuple[str, str, str | None, str | None],
         return image
     image, _ = renderer.render_frame(pack, scene, event, filename)
     return image
+
+
+def verify_title_timing(renderer, timeline: dict[str, Any]) -> list[dict[str, Any]]:
+    checks = []
+    for section in ("menu_kit", "sci-fi", "horror", "short"):
+        data = timeline[section]
+        first = data["events"][0]
+        title_end = int(data["title_card_end_ms"])
+        portrait = section == "short"
+        before = frame_state_at(timeline, section, title_end - 1, portrait)
+        at_end = frame_state_at(timeline, section, title_end, portrait)
+        at_cue = frame_state_at(timeline, section, int(first["time_ms"]), portrait)
+        if before[1:] != ("title-card", None, None):
+            raise AssertionError(f"{section} opening is not a standalone title card")
+        if at_end[1:] != ("menu", None, None):
+            raise AssertionError(f"{section} has a cue/caption behind its title card")
+        if at_cue[2] != first["event"] or int(first["time_ms"]) < title_end + 200:
+            raise AssertionError(f"{section} first cue and visual timing are not aligned")
+        state = frame_state_at(timeline, section, 0, portrait)
+        image = render_frame_state(renderer, state, portrait)
+        if image.size != (renderer.PORTRAIT if portrait else renderer.LANDSCAPE):
+            raise AssertionError(f"{section} title card dimensions are incorrect")
+        checks.append({"section": section, "title_card_end_ms": title_end,
+                       "first_cue_ms": int(first["time_ms"]),
+                       "first_event": first["event"], "dimensions": list(image.size)})
+    return checks
 
 
 def verify_endcard_routing(renderer, timeline: dict[str, Any]) -> list[dict[str, Any]]:
@@ -369,13 +433,14 @@ def normalized_cross_correlation(np, decoded: Any, template: Any, expected_sampl
 
 
 def verify_mp4(av, np, path: Path, duration_ms: int, size: tuple[int, int],
-               events: list[dict[str, Any]], templates: list[Any]) -> tuple[dict[str, Any], Any, list[Any]]:
+               events: list[dict[str, Any]], templates: list[Any],
+               allow_overpeak: bool = False) -> tuple[dict[str, Any], Any, list[Any]]:
     container = av.open(str(path), "r")
     videos = [stream for stream in container.streams if stream.type == "video"]
     audios = [stream for stream in container.streams if stream.type == "audio"]
     if len(videos) != 1 or len(audios) != 1:
         container.close()
-        raise ValueError(f"Expected one video and one AAC track: {path.name}")
+        raise ValueError(f"Expected one video and one AAC track: {path}")
     video, audio = videos[0], audios[0]
     if (video.codec_context.name, video.codec_context.width, video.codec_context.height,
             video.codec_context.format.name) != ("h264", size[0], size[1], "yuv420p"):
@@ -416,8 +481,10 @@ def verify_mp4(av, np, path: Path, duration_ms: int, size: tuple[int, int],
     if len(decoded_audio) < int(expected_samples * 0.97) or len(decoded_audio) > expected_samples + RATE // 4:
         raise ValueError(f"{path.name}: decoded audio length {len(decoded_audio)} unexpected for {expected_samples}")
     rms = math.sqrt(square_sum / max(sample_values, 1))
-    if sample_peak < 0.01 or rms < 0.0001 or sample_peak > 1.0:
-        raise ValueError(f"{path.name}: AAC waveform invalid peak={sample_peak:.6f}, RMS={rms:.6f}")
+    aac_true_peak = estimate_true_peak(np, decoded_audio)
+    aac_true_peak_dbtp = 20.0 * math.log10(max(aac_true_peak, 1e-12))
+    if sample_peak < 0.01 or rms < 0.0001 or (not allow_overpeak and (sample_peak > 1.0 or aac_true_peak > 1.0)):
+        raise ValueError(f"{path.name}: AAC waveform invalid sample_peak={sample_peak:.6f}, true_peak={aac_true_peak_dbtp:.3f} dBTP, RMS={rms:.6f}")
     correlations = []
     for event, template in zip(events, templates, strict=True):
         correlations.append(normalized_cross_correlation(np, decoded_audio, template,
@@ -428,10 +495,132 @@ def verify_mp4(av, np, path: Path, duration_ms: int, size: tuple[int, int],
              "dimensions": list(size), "fps": FPS, "video_frames_decoded": frames,
              "duration_seconds_from_frames": frames / FPS, "audio_codec": "AAC",
              "audio_rate_hz": RATE, "audio_samples_decoded": len(decoded_audio),
-             "decoded_audio_peak": sample_peak, "decoded_audio_rms": rms,
-             "cue_correlations": correlations, "bytes": path.stat().st_size,
-             "sha256": digest(path)}, decoded_audio, [])
+             "decoded_audio_sample_peak": sample_peak,
+             "decoded_audio_oversampled_true_peak": aac_true_peak,
+             "decoded_audio_oversampled_true_peak_dbtp": aac_true_peak_dbtp,
+             "true_peak_oversample_factor": TRUE_PEAK_OVERSAMPLE,
+             "decoded_audio_rms": rms, "cue_correlations": correlations,
+             "bytes": path.stat().st_size, "sha256": digest(path)}, decoded_audio, [])
 
+
+def video_packet_sha256(av, path: Path) -> str:
+    container = av.open(str(path), "r")
+    streams = [stream for stream in container.streams if stream.type == "video"]
+    if len(streams) != 1:
+        container.close()
+        raise ValueError(f"Expected one video stream in {path.name}")
+    digestor = hashlib.sha256()
+    packet_count = 0
+    for packet in container.demux(streams[0]):
+        if packet.size:
+            digestor.update(bytes(packet))
+            packet_count += 1
+    container.close()
+    if not packet_count:
+        raise ValueError(f"No video packets in {path.name}")
+    return digestor.hexdigest()
+
+
+def remux_aac_gain(av, np, source_path: Path, temp_path: Path, gain: float) -> dict[str, Any]:
+    """Scale decoded AAC and re-encode only audio, preserving H.264 packets."""
+    if temp_path.exists():
+        raise FileExistsError(f"Refusing to overwrite AAC correction output: {temp_path}")
+    source_video_hash = video_packet_sha256(av, source_path)
+    input_container = av.open(str(source_path), "r")
+    videos = [stream for stream in input_container.streams if stream.type == "video"]
+    audios = [stream for stream in input_container.streams if stream.type == "audio"]
+    if len(videos) != 1 or len(audios) != 1:
+        input_container.close()
+        raise ValueError(f"Expected one video and one audio track in {source_path.name}")
+    output_container = av.open(str(temp_path), "w", format="mp4", options={"movflags": "+faststart"})
+    output_video = output_container.add_stream_from_template(videos[0])
+    output_audio = output_container.add_stream("aac", rate=RATE)
+    output_audio.layout = "stereo"
+    output_audio.bit_rate = 112_000
+    output_container.metadata.update(input_container.metadata)
+    resampler = av.AudioResampler(format="fltp", layout="stereo", rate=RATE)
+    audio_chunks = []
+    mux_packets: list[tuple[float, int, Any]] = []
+    try:
+        for packet in input_container.demux(videos[0], audios[0]):
+            if packet.stream.type == "video":
+                if packet.size and packet.dts is not None:
+                    timestamp = float(packet.dts * packet.time_base)
+                    packet.stream = output_video
+                    mux_packets.append((timestamp, 0, packet))
+            elif packet.stream.type == "audio":
+                for frame in packet.decode():
+                    for converted in resampler.resample(frame):
+                        audio_chunks.append(converted.to_ndarray().T.astype(np.float32, copy=True))
+        for converted in resampler.resample(None):
+            audio_chunks.append(converted.to_ndarray().T.astype(np.float32, copy=True))
+        if not audio_chunks:
+            raise ValueError(f"No decoded AAC to correct in {source_path.name}")
+        decoded = np.concatenate(audio_chunks, axis=0)
+        if len(decoded) < RATE:
+            raise ValueError("Decoded audio unexpectedly short during AAC correction")
+        decoded *= float(gain)
+        for start in range(0, len(decoded), 1024):
+            chunk = decoded[start:start + 1024]
+            if len(chunk) < 1024:
+                padded = np.zeros((1024, 2), dtype=np.float32)
+                padded[:len(chunk)] = chunk
+                chunk = padded
+            frame = av.AudioFrame.from_ndarray(np.ascontiguousarray(chunk.T), format="fltp", layout="stereo")
+            frame.sample_rate = RATE
+            frame.pts = start
+            frame.time_base = Fraction(1, RATE)
+            for packet in output_audio.encode(frame):
+                stamp = packet.dts if packet.dts is not None else packet.pts
+                mux_packets.append((float(stamp * packet.time_base), 1, packet))
+        for packet in output_audio.encode(None):
+            stamp = packet.dts if packet.dts is not None else packet.pts
+            mux_packets.append((float(stamp * packet.time_base), 1, packet))
+        mux_packets.sort(key=lambda item: (item[0], item[1]))
+        for _, _, packet in mux_packets:
+            output_container.mux(packet)
+    except Exception:
+        output_container.close()
+        input_container.close()
+        raise
+    output_container.close()
+    input_container.close()
+    corrected_video_hash = video_packet_sha256(av, temp_path)
+    if corrected_video_hash != source_video_hash:
+        raise ValueError("AAC-only correction changed the H.264 video packet stream")
+    return {"source_video_packets_sha256": source_video_hash,
+            "corrected_video_packets_sha256": corrected_video_hash,
+            "video_packets_identical": True,
+            "audio_gain": float(gain), "output_bytes": temp_path.stat().st_size,
+            "output_sha256": digest(temp_path)}
+
+
+def ensure_aac_target(av, np, path: Path, duration_ms: int, size: tuple[int, int],
+                      events: list[dict[str, Any]], templates: list[Any]) -> tuple[dict[str, Any], Any, list[dict[str, Any]]]:
+    """Bound AAC-only correction to two passes, then enforce level and clipping."""
+    corrections = []
+    verified, decoded, _ = verify_mp4(av, np, path, duration_ms, size, events, templates,
+                                      allow_overpeak=True)
+    for attempt in range(2):
+        peak_db = float(verified["decoded_audio_oversampled_true_peak_dbtp"])
+        if -1.3 <= peak_db <= -0.7 and verified["decoded_audio_sample_peak"] <= 1.0:
+            break
+        desired_gain = TARGET_TRUE_PEAK / max(float(verified["decoded_audio_oversampled_true_peak"]), 1e-12)
+        correction_gain = min(2.0, max(0.5, desired_gain))
+        temp_path = path.with_name(f"{path.stem}.aac-correction-{attempt + 1}.tmp.mp4")
+        before_sha = digest(path)
+        correction = remux_aac_gain(av, np, path, temp_path, correction_gain)
+        os.replace(temp_path, path)
+        correction.update({"attempt": attempt + 1, "before_sha256": before_sha,
+                          "after_sha256": digest(path), "before_true_peak_dbtp": peak_db})
+        corrections.append(correction)
+        verified, decoded, _ = verify_mp4(av, np, path, duration_ms, size, events, templates,
+                                          allow_overpeak=True)
+    final_db = float(verified["decoded_audio_oversampled_true_peak_dbtp"])
+    final_sample_peak = float(verified["decoded_audio_sample_peak"])
+    if not (-1.3 <= final_db <= -0.7) or final_sample_peak > 1.0 or float(verified["decoded_audio_oversampled_true_peak"]) > 1.0:
+        raise ValueError(f"AAC true peak/sample clipping remains outside target after {len(corrections)} correction(s): {final_db:.3f} dBTP, sample peak {final_sample_peak:.6f}")
+    return verified, decoded, corrections
 
 def save_thumbnails(renderer, out_landscape: Path, out_short: Path) -> list[dict[str, Any]]:
     out_landscape.mkdir(parents=True, exist_ok=True)
@@ -503,6 +692,7 @@ def public_manifest(timeline: dict[str, Any]) -> dict[str, Any]:
         video_id = SHORT_ID if key == "short" else LANDSCAPE_META[key]["id"]
         duration_ms = int(section["duration_ms"])
         manifests.append({"video": video_id, "duration_ms": duration_ms,
+                          "title_card_end_ms": int(section["title_card_end_ms"]),
                           "audio_note": "The timestamps are edit placements for source OGG composition, not newly captured live signal events.",
                           "events": events})
     return {"format": 1, "title": "PulseLite illustrative video cue manifest",
@@ -634,7 +824,7 @@ def build_one(av, np, renderer, timeline: dict[str, Any], section: str,
     portrait = section == "short"
     size = V_SIZE if portrait else H_SIZE
     rows = list(data["events"])
-    audio, events, global_gain = mix_track(av, np, rows, roots, duration_ms)
+    audio, events, global_gain, audio_level = mix_track(av, np, rows, roots, duration_ms)
     pcm_hash = hashlib.sha256(audio.astype("<f4", copy=False).tobytes()).hexdigest()
     if section == "short":
         name, title = SHORT_ID, "Menu Kit to Sci-Fi to Horror UI Sounds | PulseLite Shorts"
@@ -657,12 +847,17 @@ def build_one(av, np, renderer, timeline: dict[str, Any], section: str,
             processed[-fade:] *= np.linspace(1.0, 0.0, fade, endpoint=True, dtype=np.float32)[:, None]
         processed *= float(event["effective_gain"])
         expected_templates.append(processed)
-    verified, decoded, _ = verify_mp4(av, np, target, duration_ms, size, events, expected_templates)
+    verified, decoded, aac_corrections = ensure_aac_target(av, np, target, duration_ms, size, events, expected_templates)
+    if aac_corrections:
+        encoded["initial_encode_sha256"] = aac_corrections[0]["before_sha256"]
+    encoded.update({"bytes": verified["bytes"], "sha256": verified["sha256"],
+                    "final_path": verified["path"], "aac_correction_count": len(aac_corrections)})
     report = {"video": name, "section": section, "duration_ms": duration_ms,
               "dimensions": list(size), "fps": FPS, "source_event_count": len(events),
-              "base_gain": BASE_GAIN, "fade_ms": FADE_MS, "peak_limit": PEAK_LIMIT,
-              "raw_mix_peak": float(np.max(np.abs(audio))), "global_gain": global_gain,
+              "base_gain": BASE_GAIN, "fade_ms": FADE_MS,
+              "audio_level": audio_level, "global_gain": global_gain,
               "mix_pcm_sha256": pcm_hash, "encoded": encoded, "verified": verified,
+              "aac_corrections": aac_corrections,
               "events": events}
     return report, expected_templates
 
@@ -684,19 +879,37 @@ def smoke_test(av, np, renderer, roots: dict[str, Path], out: Path) -> dict[str,
     processed *= BASE_GAIN
     onset = RATE
     audio[onset:onset + len(processed)] += processed
-    if float(np.max(np.abs(audio))) > PEAK_LIMIT:
-        audio *= PEAK_LIMIT / float(np.max(np.abs(audio)))
+    raw_true_peak = estimate_true_peak(np, audio)
+    requested_gain = TARGET_TRUE_PEAK / max(raw_true_peak, 1e-12)
+    global_gain = min(GLOBAL_GAIN_MAX, max(GLOBAL_GAIN_MIN, requested_gain))
+    audio *= global_gain
+    pcm_true_peak = estimate_true_peak(np, audio)
+    pcm_db = 20.0 * math.log10(max(pcm_true_peak, 1e-12))
+    if abs(pcm_db - TARGET_TRUE_PEAK_DBTP) > 0.05:
+        raise ValueError(f"Smoke bounded gain misses true-peak target: {pcm_db:.3f} dBTP (raw={raw_true_peak:.6f}, requested={requested_gain:.4f}, bounded={global_gain:.4f})")
     def frames():
-        image, _ = renderer.render_frame("menu-kit", "hook", None, None)
+        image, _ = renderer.render_frame("menu-kit", "menu", None, None)
         yield from [image] * 30
         image, _ = renderer.render_frame("menu-kit", "menu", "button_click", "click_03.ogg")
         yield from [image] * 90
     output = out / "codec-smoke.mp4"
     encoded = encode_mp4(av, np, output, "Codec smoke only", 4000, frames(), audio, H_SIZE)
     event = {"start_sample": onset}
-    verified, _, _ = verify_mp4(av, np, output, 4000, H_SIZE, [event], [processed])
-    return {"encoded": encoded, "verified": verified}
-
+    verified, _, corrections = ensure_aac_target(av, np, output, 4000, H_SIZE,
+                                                  [event], [processed * global_gain])
+    if corrections:
+        encoded["initial_encode_sha256"] = corrections[0]["before_sha256"]
+    encoded.update({"bytes": verified["bytes"], "sha256": verified["sha256"],
+                    "final_path": verified["path"], "aac_correction_count": len(corrections)})
+    return {"encoded": encoded, "verified": verified,
+            "aac_corrections": corrections,
+            "audio_level": {"raw_pcm_true_peak": raw_true_peak,
+                            "requested_global_gain": requested_gain,
+                            "global_gain": global_gain,
+                            "pcm_true_peak": pcm_true_peak,
+                            "pcm_true_peak_dbtp": pcm_db,
+                            "target_true_peak_dbtp": TARGET_TRUE_PEAK_DBTP,
+                            "global_gain_max": GLOBAL_GAIN_MAX}}
 
 def main() -> int:
     repo = Path(__file__).resolve().parents[3]
@@ -709,11 +922,18 @@ def main() -> int:
     parser.add_argument("--short-output", type=Path, required=True)
     parser.add_argument("--private-receipt", type=Path, required=True)
     parser.add_argument("--review-output", type=Path, required=True)
+    parser.add_argument("--manifest-output", type=Path,
+                        help="Write the generated public cue manifest to a staging path instead of the repository file")
     parser.add_argument("--only", choices=["menu_kit", "sci-fi", "horror", "short"], action="append")
     parser.add_argument("--smoke-only", action="store_true")
     args = parser.parse_args()
-    renderer = load_renderer(repo / "marketing/video/redo-review-20261027/render_stills.py")
-    timeline = load_timeline(repo / "marketing/video/redo-review-20261027/cue-timeline.json")
+    review_root = repo / "marketing/video/polish-review-20261028"
+    renderer_path = review_root / "render_stills.py"
+    timeline_path = review_root / "cue-timeline.json"
+    renderer = load_renderer(renderer_path)
+    timeline = load_timeline(timeline_path)
+    title_checks = verify_title_timing(renderer, timeline)
+    print("TITLE_TIMING_PASS " + json.dumps(title_checks, ensure_ascii=False))
     endcard_checks = verify_endcard_routing(renderer, timeline)
     print("ENDCARD_ROUTING_PASS " + json.dumps(endcard_checks, ensure_ascii=False))
     av, np = load_av(args.pyav_path)
@@ -751,7 +971,8 @@ def main() -> int:
     if not args.only:
         thumbnail_reports = save_thumbnails(renderer, args.landscape_output, args.short_output)
         write_metadata({"landscape": args.landscape_output, "short": args.short_output})
-        manifest_path = repo / "marketing/video/youtube-20261028/cue-manifest.json"
+        manifest_path = args.manifest_output or (repo / "marketing/video/youtube-20261028/cue-manifest.json")
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
         manifest_path.write_text(json.dumps(public_manifest(timeline), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         make_review_sheets(av, all_final_frames, thumbnail_reports, args.review_output)
     else:
@@ -767,10 +988,17 @@ def main() -> int:
         "task": "CDX media redo: source OGG composition into code-drawn illustrative demos",
         "captured_live_godot_signal_claim": False,
         "fps": FPS, "sample_rate_hz": RATE, "codec": "H.264 yuv420p + AAC",
-        "base_gain": BASE_GAIN, "fade_ms_each_edge": FADE_MS, "peak_limit": PEAK_LIMIT,
+        "base_gain": BASE_GAIN, "fade_ms_each_edge": FADE_MS,
+        "true_peak_target_dbtp": TARGET_TRUE_PEAK_DBTP,
+        "true_peak_oversample_factor": TRUE_PEAK_OVERSAMPLE,
+        "aac_correction_method": "Decode AAC, apply bounded constant scalar gain, re-encode AAC; H.264 packet stream must remain byte-identical.",
+        "aac_correction_max_passes": 2,
+        "global_gain_bounds": [GLOBAL_GAIN_MIN, GLOBAL_GAIN_MAX],
         "source_roots": {key: str(value) for key, value in roots.items()},
-        "timeline_sha256": digest(repo / "marketing/video/redo-review-20261027/cue-timeline.json"),
-        "renderer_sha256": digest(repo / "marketing/video/redo-review-20261027/render_stills.py"),
+        "timeline_sha256": digest(timeline_path),
+        "renderer_sha256": digest(renderer_path),
+        "manifest_sha256": digest(args.manifest_output or (repo / "marketing/video/youtube-20261028/cue-manifest.json")),
+        "title_timing_checks": title_checks,
         "endcard_routing_checks": endcard_checks,
         "pyav_version": av.__version__, "numpy_version": np.__version__,
         "videos": reports, "thumbnails": thumbnail_reports,

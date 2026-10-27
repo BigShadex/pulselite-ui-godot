@@ -19,7 +19,8 @@ python marketing/video/youtube-20261028/render_illustrative_demos.py `
   --landscape-output <FRESH_PRIVATE_LANDSCAPE_OUTPUT> `
   --short-output <FRESH_PRIVATE_SHORT_OUTPUT> `
   --private-receipt <PRIVATE_RECEIPT_DIRECTORY> `
+  --manifest-output <FRESH_PRIVATE_CUE_MANIFEST_OUTPUT> `
   --review-output <PRIVATE_REVIEW_DIRECTORY>
 ```
 
-The current replacement media uses `render_illustrative_demos.py`; `capture_godot.py` and `render_media.py` remain from an earlier rejected draft and do not produce these files. Keep source packs, OGG files, capture material and full private render receipts outside Git. A curated set of final encoded frames and sanitized technical results is in `../redo-review-20261027/final-encoded/`; top-level stills there are earlier design checkpoints.
+The current replacement media uses `render_illustrative_demos.py`; `capture_godot.py` and `render_media.py` remain from an earlier rejected draft and do not produce these files. Keep source packs, OGG files, capture material and full private render receipts outside Git. A curated set of final encoded frames and sanitized technical results is in `../polish-review-20261028/final-encoded/`; top-level stills there are earlier design checkpoints.

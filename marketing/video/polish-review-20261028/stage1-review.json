@@ -1,0 +1,1076 @@
+{
+  "stage": "visual-checkpoint-1",
+  "opening_title_duration_ms": 2500,
+  "frame_rate_fps": 30,
+  "source_cue_count": 58,
+  "source_hashes_verified": 58,
+  "source_event_maps_preserved_from_prior_timeline": 58,
+  "intro_retiming_only": [
+    {
+      "section": "menu_kit",
+      "event": "button_click",
+      "old_time_ms": 1989,
+      "new_time_ms": 2800
+    },
+    {
+      "section": "sci-fi",
+      "event": "button_hover",
+      "old_time_ms": 2700,
+      "new_time_ms": 2800
+    },
+    {
+      "section": "horror",
+      "event": "button_hover",
+      "old_time_ms": 2700,
+      "new_time_ms": 2800
+    },
+    {
+      "section": "short",
+      "event": "button_click",
+      "old_time_ms": 1600,
+      "new_time_ms": 2800
+    }
+  ],
+  "menu_rapid_sequence": {
+    "count": 8,
+    "times_ms": [
+      47590,
+      48450,
+      49310,
+      50170,
+      51030,
+      51890,
+      52750,
+      53610
+    ],
+    "cadence_ms": 860,
+    "start_ms": 47590,
+    "end_ms": 53610
+  },
+  "source_cues": [
+    {
+      "section": "menu_kit",
+      "event": "button_click",
+      "source_relpath": "audio/pulselite/click/click_03.ogg",
+      "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef",
+      "time_ms": 2800
+    },
+    {
+      "section": "menu_kit",
+      "event": "button_hover",
+      "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+      "source_sha256": "06f8b1bbdc8457da69a9343bd6ab72358412d951963d2a25107e177b488b3bd5",
+      "time_ms": 6164
+    },
+    {
+      "section": "menu_kit",
+      "event": "toggle_on",
+      "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+      "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4",
+      "time_ms": 8628
+    },
+    {
+      "section": "menu_kit",
+      "event": "toggle_off",
+      "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+      "source_sha256": "1afa835bbf72abda5e464887e75c0116968266822f4915ffdc9fd59dd02eb8f9",
+      "time_ms": 12118
+    },
+    {
+      "section": "menu_kit",
+      "event": "menu_confirm",
+      "source_relpath": "audio/pulselite/confirm/confirm_05.ogg",
+      "source_sha256": "fc165262cb583159d3a1d9d783740b0b37346fc44de436ec85d7848848f9cb4f",
+      "time_ms": 16639
+    },
+    {
+      "section": "menu_kit",
+      "event": "menu_back",
+      "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+      "source_sha256": "6bd2be70cd01f052c28d9129113f05536419ba9c46b0ada24c0a9497774ed98d",
+      "time_ms": 19236
+    },
+    {
+      "section": "menu_kit",
+      "event": "error",
+      "source_relpath": "audio/pulselite/error/error_01.ogg",
+      "source_sha256": "b883972bcb6d4ba9b9592ce1107ff4d852e509fcd3d0471370208b8d3842a930",
+      "time_ms": 22804
+    },
+    {
+      "section": "menu_kit",
+      "event": "notification",
+      "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+      "source_sha256": "bd204550a1243c831495992c9a1f56c27dd10d436bc88a43bd420edb92af613c",
+      "time_ms": 26259
+    },
+    {
+      "section": "menu_kit",
+      "event": "panel_open",
+      "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+      "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660",
+      "time_ms": 29846
+    },
+    {
+      "section": "menu_kit",
+      "event": "panel_close",
+      "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+      "source_sha256": "bdda745af4f202b14d1797feaa74ff78b657881aec7e6747b6f5ebab6db19062",
+      "time_ms": 34162
+    },
+    {
+      "section": "menu_kit",
+      "event": "transition",
+      "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+      "source_sha256": "51f0913fe0834c79aec5196f54f4b4cdff969b73df7123021f00fd9aa8111474",
+      "time_ms": 37005
+    },
+    {
+      "section": "menu_kit",
+      "event": "coin_pickup",
+      "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+      "source_sha256": "491408fd727328ed7413d34f60bcadca728b053e342cd400e14e395df18f2676",
+      "time_ms": 40431
+    },
+    {
+      "section": "menu_kit",
+      "event": "reward",
+      "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+      "source_sha256": "92f4c4cb0d8c0d925a039d3c9f492f17ad22ee135200671ed22f1d26973c5b9a",
+      "time_ms": 44026
+    },
+    {
+      "section": "menu_kit",
+      "event": "level_up",
+      "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+      "source_sha256": "cd1b23cf07b08f83029d9d410ae9513bc6581c8186646f69da670d47a7b75bdd",
+      "time_ms": 47590
+    },
+    {
+      "section": "menu_kit",
+      "event": "button_click",
+      "source_relpath": "audio/pulselite/click/click_03.ogg",
+      "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef",
+      "time_ms": 48450
+    },
+    {
+      "section": "menu_kit",
+      "event": "button_hover",
+      "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+      "source_sha256": "06f8b1bbdc8457da69a9343bd6ab72358412d951963d2a25107e177b488b3bd5",
+      "time_ms": 49310
+    },
+    {
+      "section": "menu_kit",
+      "event": "toggle_on",
+      "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+      "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4",
+      "time_ms": 50170
+    },
+    {
+      "section": "menu_kit",
+      "event": "panel_open",
+      "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+      "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660",
+      "time_ms": 51030
+    },
+    {
+      "section": "menu_kit",
+      "event": "coin_pickup",
+      "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+      "source_sha256": "491408fd727328ed7413d34f60bcadca728b053e342cd400e14e395df18f2676",
+      "time_ms": 51890
+    },
+    {
+      "section": "menu_kit",
+      "event": "notification",
+      "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+      "source_sha256": "bd204550a1243c831495992c9a1f56c27dd10d436bc88a43bd420edb92af613c",
+      "time_ms": 52750
+    },
+    {
+      "section": "menu_kit",
+      "event": "reward",
+      "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+      "source_sha256": "92f4c4cb0d8c0d925a039d3c9f492f17ad22ee135200671ed22f1d26973c5b9a",
+      "time_ms": 53610
+    },
+    {
+      "section": "sci-fi",
+      "event": "button_hover",
+      "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+      "source_sha256": "aba5137f54ef0956c8dc10f2a62fc543328b4286ce9f9f32c1c28dc796fef53e",
+      "time_ms": 2800
+    },
+    {
+      "section": "sci-fi",
+      "event": "button_click",
+      "source_relpath": "audio/pulselite/click/click_01.ogg",
+      "source_sha256": "4d32f4c42d9e82b7b30282d5cb053bdf3380d65868345374debea60c261aefec",
+      "time_ms": 3500
+    },
+    {
+      "section": "sci-fi",
+      "event": "menu_confirm",
+      "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+      "source_sha256": "41e6d8e1289d75cdbab75f621d34215c9bb395a2176dbe12d76de9d9845427ae",
+      "time_ms": 4300
+    },
+    {
+      "section": "sci-fi",
+      "event": "transition",
+      "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+      "source_sha256": "c98c66044b4d4d6816f025662eb382325d227061d4ffe21085aa34b41c6d010c",
+      "time_ms": 6900
+    },
+    {
+      "section": "sci-fi",
+      "event": "panel_open",
+      "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+      "source_sha256": "c0a8fda5e65033d66cd53f341e8f28b5ee1f6c5e7a31b8b81c9cf03172d94f19",
+      "time_ms": 8500
+    },
+    {
+      "section": "sci-fi",
+      "event": "coin_pickup",
+      "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+      "source_sha256": "084b8b0d40ff5497af7437b744f94ffd41908cd16c30652ea7fe429b7f3ac056",
+      "time_ms": 10500
+    },
+    {
+      "section": "sci-fi",
+      "event": "panel_close",
+      "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+      "source_sha256": "d1ecf49bce5f29457d976325ad7a482ba37cf3c21399e2773824c161ef025d50",
+      "time_ms": 12300
+    },
+    {
+      "section": "sci-fi",
+      "event": "toggle_on",
+      "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+      "source_sha256": "065125b0540bbcc7a6319b715f4ad28cfaf3876ba44044343afc959f2a4e9298",
+      "time_ms": 14000
+    },
+    {
+      "section": "sci-fi",
+      "event": "toggle_off",
+      "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+      "source_sha256": "ca06a26542b365d6ecaa4e9b8bac6bcb6a060b17e08cfac1e148634482e717d3",
+      "time_ms": 15400
+    },
+    {
+      "section": "sci-fi",
+      "event": "menu_back",
+      "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+      "source_sha256": "d548f10c1f435b90808fee5e389d46a01cb64f4b1463ce0f890ad7f0faf99825",
+      "time_ms": 16800
+    },
+    {
+      "section": "sci-fi",
+      "event": "error",
+      "source_relpath": "audio/pulselite/error/error_01.ogg",
+      "source_sha256": "93dbd6eec9755110eaa0d89777bc1ce17757c78c4f37319a1599eb4ea0a592e5",
+      "time_ms": 18400
+    },
+    {
+      "section": "sci-fi",
+      "event": "notification",
+      "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+      "source_sha256": "ea02b26d1dcf5894fccf512a4dce43acb08045d0404ea229a53f9312df084230",
+      "time_ms": 20100
+    },
+    {
+      "section": "sci-fi",
+      "event": "reward",
+      "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+      "source_sha256": "392a63b7cc712cae3fb337383c1274d2622e3a6695b49af9b5504b5c483fb563",
+      "time_ms": 22200
+    },
+    {
+      "section": "sci-fi",
+      "event": "level_up",
+      "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+      "source_sha256": "233192fc3306e4d2d16b3db7ff933e7ccaa41d370f7aa2d9d1cf8ea32d9b5f7d",
+      "time_ms": 24400
+    },
+    {
+      "section": "horror",
+      "event": "button_hover",
+      "source_relpath": "audio/pulselite/hover/hover_01.ogg",
+      "source_sha256": "e59ea86973daee94a03532fe0e4a666b8e8b4ec3d6f102ec79d87bea21f2a5cd",
+      "time_ms": 2800
+    },
+    {
+      "section": "horror",
+      "event": "button_click",
+      "source_relpath": "audio/pulselite/click/click_01.ogg",
+      "source_sha256": "ea3cc729627d8c5173d072c59b7aa3d5ff75ec5202127e8b0d0ffa37ec5bd02b",
+      "time_ms": 3500
+    },
+    {
+      "section": "horror",
+      "event": "menu_confirm",
+      "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+      "source_sha256": "54a42715cffe88cf2890cf10056f2f43bcec6fab5535391abf52fd8ab6593669",
+      "time_ms": 4300
+    },
+    {
+      "section": "horror",
+      "event": "transition",
+      "source_relpath": "audio/pulselite/whoosh/whoosh_06.ogg",
+      "source_sha256": "a871613804c9f41d81816ef7d0964bab6cfbc34551918d6f97c8fb00d010fdb1",
+      "time_ms": 6900
+    },
+    {
+      "section": "horror",
+      "event": "panel_open",
+      "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+      "source_sha256": "42cf18f1a2219be9dba993624de08024a9a40e853444ab007ae480d9eb744785",
+      "time_ms": 8500
+    },
+    {
+      "section": "horror",
+      "event": "coin_pickup",
+      "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+      "source_sha256": "a81197d5c70ae60898f8b4528e14b9f1bced55594044beae8e4bd986244a7483",
+      "time_ms": 10500
+    },
+    {
+      "section": "horror",
+      "event": "panel_close",
+      "source_relpath": "audio/pulselite/panel_close/panel_close_05.ogg",
+      "source_sha256": "30277630055bd0cf3717de42f80d1c875e8576ce16fbfd5b2917e6c5e3fd30dd",
+      "time_ms": 12300
+    },
+    {
+      "section": "horror",
+      "event": "toggle_on",
+      "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+      "source_sha256": "9ae9df6cd759a9f282d2d83f72bee33de88a3bab2ecaed0ddcfec23343db2417",
+      "time_ms": 14000
+    },
+    {
+      "section": "horror",
+      "event": "toggle_off",
+      "source_relpath": "audio/pulselite/toggle/toggle_02.ogg",
+      "source_sha256": "281d03f47e156168901c3984974cd112e909097b33e6386d34d64a08cfa5832a",
+      "time_ms": 15400
+    },
+    {
+      "section": "horror",
+      "event": "menu_back",
+      "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+      "source_sha256": "7a2acc4f21255a79b3bc64614fd01b3b7e2a14a7f3a69160ee6af00679f46d87",
+      "time_ms": 16800
+    },
+    {
+      "section": "horror",
+      "event": "error",
+      "source_relpath": "audio/pulselite/error/error_01.ogg",
+      "source_sha256": "a7b47958c7744d0ff3e5d625f881aafc37f98eda0edca2281e93c435fd3ce87f",
+      "time_ms": 18400
+    },
+    {
+      "section": "horror",
+      "event": "notification",
+      "source_relpath": "audio/pulselite/notify/notify_02.ogg",
+      "source_sha256": "11a334de5bcce0dbeb7dba91b8750c1824b232669a4b688dc996e21af0be9247",
+      "time_ms": 20100
+    },
+    {
+      "section": "horror",
+      "event": "reward",
+      "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+      "source_sha256": "e5dc5cb8c5c09c8d0be28c3885de36171612c069f064fe4e6c3782f0dd93a5f6",
+      "time_ms": 22200
+    },
+    {
+      "section": "horror",
+      "event": "level_up",
+      "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+      "source_sha256": "87905df97eea80ce0a0d4d9b8bec2e8d46211dd9674696ae7132a99581cade4c",
+      "time_ms": 24400
+    },
+    {
+      "section": "short",
+      "event": "button_click",
+      "source_relpath": "audio/pulselite/click/click_03.ogg",
+      "source_sha256": "83327998a360d3aed6682e526333bd2739cd1ae37d6fc6b7059f9400db3008ef",
+      "time_ms": 2800
+    },
+    {
+      "section": "short",
+      "event": "toggle_on",
+      "source_relpath": "audio/pulselite/toggle/toggle_01.ogg",
+      "source_sha256": "cb4dff58260f98379e311b77ff980a525476285da2b2a53ab3a9852afd38fec4",
+      "time_ms": 4200
+    },
+    {
+      "section": "short",
+      "event": "panel_open",
+      "source_relpath": "audio/pulselite/panel_open/panel_open_04.ogg",
+      "source_sha256": "7bdce278d4d423234695768884e04e5b8030d86a50a90b368d3380078382d660",
+      "time_ms": 7000
+    },
+    {
+      "section": "short",
+      "event": "menu_confirm",
+      "source_relpath": "audio/pulselite/confirm/confirm_01.ogg",
+      "source_sha256": "41e6d8e1289d75cdbab75f621d34215c9bb395a2176dbe12d76de9d9845427ae",
+      "time_ms": 9200
+    },
+    {
+      "section": "short",
+      "event": "coin_pickup",
+      "source_relpath": "audio/pulselite/coin/coin_01.ogg",
+      "source_sha256": "084b8b0d40ff5497af7437b744f94ffd41908cd16c30652ea7fe429b7f3ac056",
+      "time_ms": 11600
+    },
+    {
+      "section": "short",
+      "event": "level_up",
+      "source_relpath": "audio/pulselite/level_up/level_up_01.ogg",
+      "source_sha256": "233192fc3306e4d2d16b3db7ff933e7ccaa41d370f7aa2d9d1cf8ea32d9b5f7d",
+      "time_ms": 13700
+    },
+    {
+      "section": "short",
+      "event": "error",
+      "source_relpath": "audio/pulselite/error/error_01.ogg",
+      "source_sha256": "a7b47958c7744d0ff3e5d625f881aafc37f98eda0edca2281e93c435fd3ce87f",
+      "time_ms": 16100
+    },
+    {
+      "section": "short",
+      "event": "reward",
+      "source_relpath": "audio/pulselite/reward/reward_05.ogg",
+      "source_sha256": "e5dc5cb8c5c09c8d0be28c3885de36171612c069f064fe4e6c3782f0dd93a5f6",
+      "time_ms": 18300
+    },
+    {
+      "section": "short",
+      "event": "menu_back",
+      "source_relpath": "audio/pulselite/back_cancel/back_cancel_01.ogg",
+      "source_sha256": "7a2acc4f21255a79b3bc64614fd01b3b7e2a14a7f3a69160ee6af00679f46d87",
+      "time_ms": 20400
+    }
+  ],
+  "title_checks": [
+    {
+      "section": "menu_kit",
+      "title_card_end_ms": 2500,
+      "first_cue_ms": 2800,
+      "first_event": "button_click",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "section": "sci-fi",
+      "title_card_end_ms": 2500,
+      "first_cue_ms": 2800,
+      "first_event": "button_hover",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "section": "horror",
+      "title_card_end_ms": 2500,
+      "first_cue_ms": 2800,
+      "first_event": "button_hover",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "section": "short",
+      "title_card_end_ms": 2500,
+      "first_cue_ms": 2800,
+      "first_event": "button_click",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    }
+  ],
+  "endcard_checks": [
+    {
+      "section": "menu_kit",
+      "endcard_pack": "menu-kit",
+      "product_path": "/pulselite-ui-sfx",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "render_sha256": "06ee8b22c31a64d9ba69643c0310c9f74b65b677c983b8204da44fff92e1bc9a"
+    },
+    {
+      "section": "sci-fi",
+      "endcard_pack": "sci-fi",
+      "product_path": "/pulselite-scifi-ui",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "render_sha256": "1f3b2b56099f947181a896ea16c722bc09a7b38f996be1a072db72e9fc8f00b5"
+    },
+    {
+      "section": "horror",
+      "endcard_pack": "horror",
+      "product_path": "/pulselite-horror-ui",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "render_sha256": "113794cfac57e825f343b8c17562f16c7bdd8cafe5522af5e59f9867b9700969"
+    }
+  ],
+  "frames": [
+    {
+      "path": "stage1/title-horror.jpg",
+      "sha256": "7d1d11d51c764ee46e33fb8ce775116ae18a1cb87d4a9f90de5e843697bc8519",
+      "bytes": 108087,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "horror",
+      "time_ms": 0,
+      "bounds": {
+        "title_card": [
+          300,
+          238,
+          1620,
+          830
+        ],
+        "brand": [
+          560,
+          344,
+          1360,
+          490
+        ],
+        "pack_name": [
+          510,
+          505,
+          1410,
+          610
+        ]
+      }
+    },
+    {
+      "path": "stage1/endcard-horror.jpg",
+      "sha256": "8489c9f5a1cbb4651e51768f754edb406f85b7a5a2431e7ead844d74b29e0856",
+      "bytes": 188555,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "horror",
+      "time_ms": 26000,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      }
+    },
+    {
+      "path": "stage1/title-menu-kit.jpg",
+      "sha256": "352e833c0b4169ec77be8d48ac21ea112bf7d30c39c6d2e87a8da81786a7c250",
+      "bytes": 107634,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "menu_kit",
+      "time_ms": 0,
+      "bounds": {
+        "title_card": [
+          300,
+          238,
+          1620,
+          830
+        ],
+        "brand": [
+          560,
+          344,
+          1360,
+          490
+        ],
+        "pack_name": [
+          510,
+          505,
+          1410,
+          610
+        ]
+      }
+    },
+    {
+      "path": "stage1/main-menu-first-cue.jpg",
+      "sha256": "8fe11f873f43a045befdb43044d0a4e159c38483f366a587431d23d74db4c766",
+      "bytes": 208714,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "menu_kit",
+      "time_ms": 2800,
+      "bounds": {
+        "main_panel": [
+          480,
+          300,
+          1440,
+          815
+        ],
+        "button_play": [
+          610,
+          390,
+          1310,
+          480
+        ],
+        "button_settings": [
+          610,
+          486,
+          1310,
+          576
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      }
+    },
+    {
+      "path": "stage1/endcard-menu-kit.jpg",
+      "sha256": "ef1346b64f43817b62450514144a4999da0adbec356f95ac2b29492d7edd4d42",
+      "bytes": 179504,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "menu_kit",
+      "time_ms": 55000,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      }
+    },
+    {
+      "path": "stage1/title-sci-fi.jpg",
+      "sha256": "62cba21283b141e7c919749e9ffc78e0d0708ca3d3636140b182a3801f9d4cb6",
+      "bytes": 120140,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "sci-fi",
+      "time_ms": 0,
+      "bounds": {
+        "title_card": [
+          300,
+          238,
+          1620,
+          830
+        ],
+        "brand": [
+          560,
+          344,
+          1360,
+          490
+        ],
+        "pack_name": [
+          510,
+          505,
+          1410,
+          610
+        ]
+      }
+    },
+    {
+      "path": "stage1/settings-toggle-on.jpg",
+      "sha256": "301bff34cf6bd313cdc70e40ee339011e9abbdffee242173df94df6e0d38af2b",
+      "bytes": 179966,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "sci-fi",
+      "time_ms": 14000,
+      "bounds": {
+        "settings_panel": [
+          420,
+          262,
+          1500,
+          820
+        ],
+        "toggle_ui": [
+          1130,
+          440,
+          1370,
+          516
+        ],
+        "toggle_ambience": [
+          1130,
+          578,
+          1370,
+          654
+        ],
+        "caption": [
+          115,
+          878,
+          1805,
+          965
+        ]
+      }
+    },
+    {
+      "path": "stage1/endcard-sci-fi.jpg",
+      "sha256": "07a62fef05ffa1fcce7422cb32c1c296dc8cd9fba39744ec4114fcd97b781b25",
+      "bytes": 186848,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "section": "sci-fi",
+      "time_ms": 26000,
+      "bounds": {
+        "product_link": [
+          280,
+          396,
+          1640,
+          572
+        ],
+        "preview_link": [
+          280,
+          602,
+          1640,
+          778
+        ],
+        "disclosures": [
+          260,
+          845,
+          1660,
+          1005
+        ]
+      }
+    },
+    {
+      "path": "stage1/title-short-three-packs.jpg",
+      "sha256": "ab7a37c41667f990c5ece73e9848d5e11a891212b63a7c9e4620d9ee2dba81f7",
+      "bytes": 114855,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "section": "short",
+      "time_ms": 0,
+      "bounds": {
+        "title_card": [
+          80,
+          610,
+          1000,
+          1310
+        ],
+        "brand": [
+          255,
+          760,
+          825,
+          900
+        ],
+        "pack_names": [
+          120,
+          935,
+          960,
+          1005
+        ]
+      }
+    },
+    {
+      "path": "stage1/short-main-menu-first-cue.jpg",
+      "sha256": "913884bea8d9f8802276cce5996797b2b4c46ba4e6719f81971b7ff76ab6d51c",
+      "bytes": 190264,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "section": "short",
+      "time_ms": 2800,
+      "bounds": {
+        "header": [
+          80,
+          80,
+          900,
+          190
+        ],
+        "main_panel": [
+          90,
+          460,
+          890,
+          1380
+        ],
+        "button_play": [
+          100,
+          500,
+          880,
+          680
+        ],
+        "button_settings": [
+          100,
+          705,
+          880,
+          885
+        ],
+        "caption": [
+          80,
+          1430,
+          900,
+          1640
+        ]
+      }
+    },
+    {
+      "path": "stage1/endcard-short-three-packs.jpg",
+      "sha256": "5b4bc600a8c96a5e6e81bb73c4dd1ba11a56904377935879dcd9c60395c0f79d",
+      "bytes": 200079,
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "section": "short",
+      "time_ms": 22000,
+      "bounds": {
+        "pack_links": [
+          90,
+          560,
+          990,
+          1000
+        ],
+        "preview_link": [
+          90,
+          1050,
+          990,
+          1500
+        ],
+        "disclosures": [
+          80,
+          1622,
+          1000,
+          1780
+        ],
+        "caption": null
+      }
+    }
+  ],
+  "readability_files": {
+    "landscape_main_640x360": "stage1/readability-landscape-main-640x360.png",
+    "landscape_settings_640x360": "stage1/readability-landscape-settings-640x360.png",
+    "portrait_main_360x640": "stage1/readability-portrait-main-360x640.png",
+    "portrait_title_360x640": "stage1/readability-portrait-title-360x640.png",
+    "portrait_endcard_360x640": "stage1/readability-portrait-endcard-360x640.png",
+    "landscape_endcard_menu-kit_640x360": "stage1/readability-endcard-menu-kit-640x360.png",
+    "landscape_endcard_sci-fi_640x360": "stage1/readability-endcard-sci-fi-640x360.png",
+    "landscape_endcard_horror_640x360": "stage1/readability-endcard-horror-640x360.png",
+    "opening_landscape_strip": "stage1/readability-opening-landscape-640x360-strip.png",
+    "opening_portrait": "stage1/readability-portrait-title-360x640.png"
+  },
+  "typography_checks": [
+    {
+      "label": "landscape_disclosure",
+      "text": "Illustrative UI · procedural DSP · AI-assisted",
+      "font": "Arial Bold",
+      "font_size_px": 36,
+      "measured_width_px": 752,
+      "measured_height_px": 33,
+      "container_width_px": 1792,
+      "rendered_width_at_target_px": 250.7,
+      "fits": true
+    },
+    {
+      "label": "portrait_disclosure",
+      "text": "Illustrative UI · procedural DSP · AI-assisted",
+      "font": "Arial Bold",
+      "font_size_px": 36,
+      "measured_width_px": 752,
+      "measured_height_px": 33,
+      "container_width_px": 820,
+      "rendered_width_at_target_px": 250.7,
+      "fits": true
+    },
+    {
+      "label": "portrait_header",
+      "text": "PULSELITE  /  MENU KIT",
+      "font": "Arial Bold",
+      "font_size_px": 54,
+      "measured_width_px": 633,
+      "measured_height_px": 41,
+      "container_width_px": 820,
+      "rendered_width_at_target_px": 211.0,
+      "fits": true
+    },
+    {
+      "label": "portrait_short_title",
+      "text": "MENU KIT · SCI-FI · HORROR",
+      "font": "Arial Bold",
+      "font_size_px": 52,
+      "measured_width_px": 724,
+      "measured_height_px": 39,
+      "container_width_px": 820,
+      "rendered_width_at_target_px": 241.3,
+      "fits": true
+    },
+    {
+      "label": "portrait_endcard_not_included",
+      "text": "ILLUSTRATIVE UI — NOT INCLUDED",
+      "font": "Arial Bold",
+      "font_size_px": 36,
+      "measured_width_px": 632,
+      "measured_height_px": 26,
+      "container_width_px": 920,
+      "rendered_width_at_target_px": 210.7,
+      "fits": true
+    },
+    {
+      "label": "portrait_endcard_source_note",
+      "text": "SOURCE OGG · PROCEDURAL DSP · AI-ASSISTED",
+      "font": "Arial Bold",
+      "font_size_px": 36,
+      "measured_width_px": 878,
+      "measured_height_px": 26,
+      "container_width_px": 920,
+      "rendered_width_at_target_px": 292.7,
+      "fits": true
+    },
+    {
+      "label": "portrait_caption_event",
+      "text": "menu_confirm",
+      "font": "Arial Bold",
+      "font_size_px": 48,
+      "measured_width_px": 331,
+      "measured_height_px": 45,
+      "container_width_px": 820,
+      "rendered_width_at_target_px": 110.3,
+      "fits": true
+    },
+    {
+      "label": "portrait_caption_filename",
+      "text": "→  confirm_01.ogg",
+      "font": "Arial Bold",
+      "font_size_px": 48,
+      "measured_width_px": 431,
+      "measured_height_px": 45,
+      "container_width_px": 820,
+      "rendered_width_at_target_px": 143.7,
+      "fits": true
+    }
+  ],
+  "caption_width_checks": {
+    "landscape_count": 49,
+    "landscape_max": {
+      "event": "menu_back",
+      "filename": "back_cancel_01.ogg",
+      "width_px": 902
+    },
+    "landscape_container_width_px": 1690,
+    "portrait_count": 9,
+    "portrait_max": {
+      "event": "menu_back",
+      "filename": "back_cancel_01.ogg",
+      "line_widths_px": [
+        265,
+        542
+      ]
+    },
+    "portrait_container_width_px": 820,
+    "all_captions_fit": true
+  },
+  "cue_timeline_sha256": "1fb2bb6453a2420841d019473a991a1a020b5e0c2c72b4c82cbc609131b5b722",
+  "renderer_sha256": "463a7da24fa36f8d0cba939b852b2fea24bdc11fda90dd06f05f93f7adea8267",
+  "active_builder_sha256": "d60fb4daab85f97a3f283901116a402a4785f5b19ed065c32a934a60db63dc91",
+  "cue_manifest_sha256": "935ae8cf534a0e65dcc6e34a37759f6b354c028b0b5a9c4b24dc3992316d8b1a",
+  "content_notice": "No video encode or audio playback was performed for this visual checkpoint.",
+  "portrait_layout_checks": {
+    "title_card_bounds": [
+      80,
+      610,
+      1000,
+      1310
+    ],
+    "title_card_center_px": [
+      540,
+      960
+    ],
+    "menu_panel_bounds": [
+      90,
+      460,
+      890,
+      1380
+    ],
+    "menu_button_bounds": {
+      "button_play": [
+        100,
+        500,
+        880,
+        680
+      ],
+      "button_settings": [
+        100,
+        705,
+        880,
+        885
+      ]
+    },
+    "caption_bounds": [
+      80,
+      1430,
+      900,
+      1640
+    ],
+    "demo_disclosure_top_px": 1738,
+    "demo_disclosure_bottom_px": 1772,
+    "demo_bottom_margin_px": 148,
+    "endcard_disclosure_bounds": [
+      80,
+      1622,
+      1000,
+      1780
+    ],
+    "endcard_bottom_margin_px": 159,
+    "endcard_last_text_bottom_px": 1761
+  }
+}
