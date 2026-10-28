@@ -7,3 +7,14 @@ Sounds: PulseLite UI SFX by Bigshadex (CC BY 4.0) https://bigshadex.itch.io/puls
 
 Scripts (PulseLiteUI.gd, plugin.gd) are MIT and need no credit in-game.
 Full kit (200+ sounds, Sci-Fi and Horror themes): https://bigshadex.itch.io/pulselite-ui-sfx
+
+Overnight Sci-Fi / Horror gallery stills
+
+The new `marketing/gallery/sci-fi/04-*.png` through `07-*.png` and
+`marketing/gallery/horror/04-*.png` through `07-*.png` are original, code-drawn
+illustrations. They contain no source audio, photography, or third-party
+illustration assets. Their event/file labels are examples based on the public
+PulseLite cue manifest; they do not show a captured game or claim audible
+playback. Pillow's built-in Aileron Regular font is used without a bundled font
+file. The Aileron author marks the font "No Rights Reserved" and permits use,
+modification, and redistribution: https://dotcolon.net/fonts/aileron/
