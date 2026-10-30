@@ -102,3 +102,9 @@ The audio is synthesized from code (procedural DSP: oscillators, FM, filtered no
 
 - Browser previewer: https://bigshadex.github.io/pulselite-previewer/
 - Free sample with a playable browser demo: https://bigshadex.itch.io/pulselite-ui-sfx-free
+
+## Optional feedback and other products
+
+If you've tried this free add-on and would like to leave a rating or short review on its itch.io page, an honest one is welcome. Positive, mixed, or critical feedback is useful; no pressure. If you haven't tried the add-on, please skip rating it. The add-on is free to use, and no purchase or rating is required.
+
+**Also by Bigshadex:** [Menu Kit](https://bigshadex.itch.io/pulselite-ui-sfx), [Sci-Fi UI](https://bigshadex.itch.io/pulselite-scifi-ui), [Horror UI](https://bigshadex.itch.io/pulselite-horror-ui), and [PulseLite Complete](https://bigshadex.itch.io/pulselite-complete). The separate [Client Tracker](https://bigshadex.itch.io/client-tracker) is a manual-entry spreadsheet for client, project, invoice, payment, and follow-up records; it is not part of this Godot add-on.
