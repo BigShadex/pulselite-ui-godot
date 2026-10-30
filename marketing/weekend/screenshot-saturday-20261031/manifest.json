@@ -1,0 +1,42 @@
+{
+  "task": "W10 ScreenshotSaturday stills",
+  "generated_from_existing_art": true,
+  "assets": [
+    {
+      "file": "01-main-menu.png",
+      "source": "marketing/visuals/01-main-menu.png",
+      "label": "Menu overview",
+      "caption": "Illustrative Mirror & Mist menu with the playback receipt waiting for PulseLiteUI.played; this frame shows no event yet.",
+      "alt_text": "Wide dark teal fictional Mirror & Mist game menu with Continue, Begin a New Journey, and Audio Settings buttons. The right playback receipt says No playback yet and lists example input mappings.",
+      "format": "PNG",
+      "width": 1280,
+      "height": 720,
+      "bytes": 86071,
+      "sha256": "87bf280609f4806aca4c95da3ecf7339b05d1b618d852ba03cc3d2303d3caac9"
+    },
+    {
+      "file": "02-confirm-signal.png",
+      "source": "marketing/visuals/02-confirm-signal.png",
+      "label": "Confirm signal",
+      "caption": "Illustrative menu capture with a captured menu_confirm receipt for confirm/confirm_06.wav after synthetic viewport input; the image has no audible playback.",
+      "alt_text": "Wide dark teal illustrative Mirror & Mist menu beside a playback receipt showing menu_confirm and confirm/confirm_06.wav. The fictional game UI is not included.",
+      "format": "PNG",
+      "width": 1280,
+      "height": 720,
+      "bytes": 84088,
+      "sha256": "a31031016baf938c3ccbe1e62e60c0b83663e1ccff814fe7a1ee83ba0d36e9b6"
+    },
+    {
+      "file": "03-options-toggle.png",
+      "source": "marketing/visuals/03-options-toggle.png",
+      "label": "Options toggle",
+      "caption": "Illustrative settings menu with AMBIENCE / ON highlighted and a captured toggle_on receipt for toggle/toggle_01.wav after synthetic viewport input; the image has no audible playback.",
+      "alt_text": "Wide dark teal illustrative Mirror & Mist settings menu with AMBIENCE / ON highlighted. The playback receipt shows toggle_on and toggle/toggle_01.wav; the fictional game UI is not included.",
+      "format": "PNG",
+      "width": 1280,
+      "height": 720,
+      "bytes": 80998,
+      "sha256": "db2d65ed648acc61a516ee827e25614296bab9608bb3773953167a37ce84faef"
+    }
+  ]
+}
