@@ -1,0 +1,2 @@
+# Local 50% readability previews. Recreate with build.py; never stage or publish.
+.review-half-*.png

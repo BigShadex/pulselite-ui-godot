@@ -1,0 +1,282 @@
+{
+  "task": "W11 paid-page gallery refresh recommendation",
+  "read_only_listing_recommendation": true,
+  "new_live_tests": false,
+  "shared_category_count": 13,
+  "shared_event_count": 14,
+  "public_addon_free_sounds_are_subset_of_menu_kit": 20,
+  "sound_counts_are_unique_files_not_wav_plus_ogg": true,
+  "disclosures": [
+    "Menu UI illustrations and demo code are not included game templates.",
+    "Sci-Fi and Horror event receipts are static example labels, not captured sound playback.",
+    "The Menu Kit signal capture used synthetic viewport input and Godot Dummy audio; it is not an audible playback or physical-pointer test.",
+    "Sound is procedural DSP; visual assets and code/docs were AI-assisted.",
+    "The public add-on's 20 free sounds are a subset of Menu Kit.",
+    "Matching WAV and OGG encodings are not counted as separate sounds."
+  ],
+  "pages": [
+    {
+      "page": "Menu Kit",
+      "unique_sound_count": 200,
+      "count_basis": "Unique WAV sound files; matching OGG files are alternate encodings.",
+      "items": [
+        {
+          "order": 1,
+          "role": "menu shot with captured signal",
+          "asset_path": "marketing/visuals/02-confirm-signal.png",
+          "caption": "Illustrative Mirror & Mist menu with the captured Menu Kit free-sample menu_confirm receipt for confirm/confirm_06.wav. The Godot capture used synthetic viewport input and the Dummy audio driver; it does not demonstrate audible playback.",
+          "alt_text": "Wide dark teal illustrative Mirror & Mist menu beside a playback receipt showing menu_confirm and confirm/confirm_06.wav. The frame is labelled free-sample mapping; the menu is not included with the sound pack.",
+          "source_paths": [
+            "marketing/visuals/02-confirm-signal.png",
+            "marketing/visuals/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1280,
+            "height": 720,
+            "bytes": 84088,
+            "sha256": "a31031016baf938c3ccbe1e62e60c0b83663e1ccff814fe7a1ee83ba0d36e9b6"
+          }
+        },
+        {
+          "order": 2,
+          "role": "shared event table",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+          "caption": "Shared map: 14 event names across 13 category folders. Counts are unique sound files; matching OGG encodings are not counted again.",
+          "alt_text": "Table mapping fourteen shared UI events to thirteen category folders, with counts of 200 Menu Kit, 104 Sci-Fi, 104 Horror, and 408 Complete unique sounds. Matching OGG encodings are alternate formats.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+            "addons/pulselite_ui/ui_events.json",
+            "marketing/sound-lists/verification.md",
+            "marketing/copy/2026-10-26/README.md",
+            "marketing/visuals/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 107326,
+            "sha256": "f7ddcdac1ba192b0ef1d8751a5339aa178f17bd3f2f87370f217f5fe71e3b65d"
+          }
+        },
+        {
+          "order": 3,
+          "role": "Godot call snippet",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+          "caption": "Godot helper call from the existing demo source. It wires buttons under a scene node; the sound pack does not include the demo UI or a game template.",
+          "alt_text": "Code panel showing the Godot demo call PulseLiteUI.wire_buttons(self) inside _ready, after building the sample interface. This code is a helper example, not an included game UI.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+            "marketing/visuals/demo.gd",
+            "addons/pulselite_ui/PulseLiteUI.gd"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 90400,
+            "sha256": "51710b37bc2a0e135d500c65248ccc22623caf6954eb81b64d3d382f3c64da92"
+          }
+        }
+      ]
+    },
+    {
+      "page": "Sci-Fi",
+      "unique_sound_count": 104,
+      "count_basis": "Unique WAV sound files; matching OGG files are alternate encodings.",
+      "items": [
+        {
+          "order": 1,
+          "role": "illustrative menu and static event example",
+          "asset_path": "marketing/gallery/sci-fi/02-confirm.png",
+          "caption": "Illustrative Mirror & Mist menu labelled for Sci-Fi sounds, with a static menu_confirm / confirm/confirm_07.ogg example. This is not a game capture or an audible playback test.",
+          "alt_text": "Illustrative Mirror & Mist menu mockup with a Sci-Fi sounds badge and a separate receipt card displaying menu_confirm and confirm/confirm_07.ogg as a static example. No game UI is included.",
+          "source_paths": [
+            "marketing/gallery/sci-fi/02-confirm.png",
+            "marketing/gallery/ALT_TEXT.md",
+            "marketing/gallery/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 630,
+            "height": 953,
+            "bytes": 103935,
+            "sha256": "c8bd47a3e2bedac15d1b3a5b90ad01e05744ac88b4fc1945cea89766131012c4"
+          }
+        },
+        {
+          "order": 2,
+          "role": "shared event table",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+          "caption": "Shared map: 14 event names across 13 category folders. Counts are unique sound files; matching OGG encodings are not counted again.",
+          "alt_text": "Table mapping fourteen shared UI events to thirteen category folders, with counts of 200 Menu Kit, 104 Sci-Fi, 104 Horror, and 408 Complete unique sounds. Matching OGG encodings are alternate formats.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+            "addons/pulselite_ui/ui_events.json",
+            "marketing/sound-lists/verification.md",
+            "marketing/copy/2026-10-26/README.md",
+            "marketing/visuals/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 107326,
+            "sha256": "f7ddcdac1ba192b0ef1d8751a5339aa178f17bd3f2f87370f217f5fe71e3b65d"
+          }
+        },
+        {
+          "order": 3,
+          "role": "Godot call snippet",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+          "caption": "Godot helper call from the existing demo source. It wires buttons under a scene node; the sound pack does not include the demo UI or a game template.",
+          "alt_text": "Code panel showing the Godot demo call PulseLiteUI.wire_buttons(self) inside _ready, after building the sample interface. This code is a helper example, not an included game UI.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+            "marketing/visuals/demo.gd",
+            "addons/pulselite_ui/PulseLiteUI.gd"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 90400,
+            "sha256": "51710b37bc2a0e135d500c65248ccc22623caf6954eb81b64d3d382f3c64da92"
+          }
+        }
+      ]
+    },
+    {
+      "page": "Horror",
+      "unique_sound_count": 104,
+      "count_basis": "Unique WAV sound files; matching OGG files are alternate encodings.",
+      "items": [
+        {
+          "order": 1,
+          "role": "illustrative menu and static event example",
+          "asset_path": "marketing/gallery/horror/02-confirm.png",
+          "caption": "Illustrative Mirror & Mist menu labelled for Horror sounds, with a static menu_confirm / confirm/confirm_02.ogg example. This is not a game capture or an audible playback test.",
+          "alt_text": "Illustrative Mirror & Mist menu mockup with a Horror sounds badge and a separate receipt card displaying menu_confirm and confirm/confirm_02.ogg as a static example. No game UI is included.",
+          "source_paths": [
+            "marketing/gallery/horror/02-confirm.png",
+            "marketing/gallery/ALT_TEXT.md",
+            "marketing/gallery/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 630,
+            "height": 953,
+            "bytes": 103449,
+            "sha256": "07f5a6fbb445d9a9f84351133d7db1226baeac45d03a11868d346bbf61331f27"
+          }
+        },
+        {
+          "order": 2,
+          "role": "shared event table",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+          "caption": "Shared map: 14 event names across 13 category folders. Counts are unique sound files; matching OGG encodings are not counted again.",
+          "alt_text": "Table mapping fourteen shared UI events to thirteen category folders, with counts of 200 Menu Kit, 104 Sci-Fi, 104 Horror, and 408 Complete unique sounds. Matching OGG encodings are alternate formats.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+            "addons/pulselite_ui/ui_events.json",
+            "marketing/sound-lists/verification.md",
+            "marketing/copy/2026-10-26/README.md",
+            "marketing/visuals/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 107326,
+            "sha256": "f7ddcdac1ba192b0ef1d8751a5339aa178f17bd3f2f87370f217f5fe71e3b65d"
+          }
+        },
+        {
+          "order": 3,
+          "role": "Godot call snippet",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+          "caption": "Godot helper call from the existing demo source. It wires buttons under a scene node; the sound pack does not include the demo UI or a game template.",
+          "alt_text": "Code panel showing the Godot demo call PulseLiteUI.wire_buttons(self) inside _ready, after building the sample interface. This code is a helper example, not an included game UI.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+            "marketing/visuals/demo.gd",
+            "addons/pulselite_ui/PulseLiteUI.gd"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 90400,
+            "sha256": "51710b37bc2a0e135d500c65248ccc22623caf6954eb81b64d3d382f3c64da92"
+          }
+        }
+      ]
+    },
+    {
+      "page": "Complete",
+      "unique_sound_count": 408,
+      "count_basis": "200 Menu Kit + 104 Sci-Fi + 104 Horror unique WAV files; OGG encodings are not added again.",
+      "items": [
+        {
+          "order": 1,
+          "role": "menu shot with captured signal",
+          "asset_path": "marketing/visuals/02-confirm-signal.png",
+          "caption": "Illustrative menu with a captured Menu Kit free-sample menu_confirm / confirm/confirm_06.wav receipt. This included Menu Kit sound is one part of Complete; the image does not show Sci-Fi or Horror recordings.",
+          "alt_text": "Wide dark teal illustrative Mirror & Mist menu beside a captured menu_confirm receipt for confirm/confirm_06.wav, a Menu Kit sound included in Complete. The UI is not included.",
+          "source_paths": [
+            "marketing/visuals/02-confirm-signal.png",
+            "marketing/visuals/README.md",
+            "marketing/copy/2026-10-26/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1280,
+            "height": 720,
+            "bytes": 84088,
+            "sha256": "a31031016baf938c3ccbe1e62e60c0b83663e1ccff814fe7a1ee83ba0d36e9b6"
+          }
+        },
+        {
+          "order": 2,
+          "role": "shared event table",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+          "caption": "Shared map: 14 event names across 13 category folders. Counts are unique sound files; matching OGG encodings are not counted again.",
+          "alt_text": "Table mapping fourteen shared UI events to thirteen category folders, with counts of 200 Menu Kit, 104 Sci-Fi, 104 Horror, and 408 Complete unique sounds. Matching OGG encodings are alternate formats.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/14-shared-events-and-counts.png",
+            "addons/pulselite_ui/ui_events.json",
+            "marketing/sound-lists/verification.md",
+            "marketing/copy/2026-10-26/README.md",
+            "marketing/visuals/README.md"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 107326,
+            "sha256": "f7ddcdac1ba192b0ef1d8751a5339aa178f17bd3f2f87370f217f5fe71e3b65d"
+          }
+        },
+        {
+          "order": 3,
+          "role": "Godot call snippet",
+          "asset_path": "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+          "caption": "Godot helper call from the existing demo source. It wires buttons under a scene node; the sound pack does not include the demo UI or a game template.",
+          "alt_text": "Code panel showing the Godot demo call PulseLiteUI.wire_buttons(self) inside _ready, after building the sample interface. This code is a helper example, not an included game UI.",
+          "source_paths": [
+            "marketing/weekend/gallery-refresh-20261030/godot-wire-buttons-call.png",
+            "marketing/visuals/demo.gd",
+            "addons/pulselite_ui/PulseLiteUI.gd"
+          ],
+          "image": {
+            "format": "PNG",
+            "width": 1920,
+            "height": 1080,
+            "bytes": 90400,
+            "sha256": "51710b37bc2a0e135d500c65248ccc22623caf6954eb81b64d3d382f3c64da92"
+          }
+        }
+      ]
+    }
+  ]
+}
