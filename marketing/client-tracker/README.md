@@ -27,3 +27,16 @@ The builder crops the supplied worksheet renders and adds captions. It does not 
 The exact native Calc copy used for the after-state PDF was checked separately from earlier working copies. Its saved Dashboard values match the previews, its 8,169 formula-cell addresses and workbook feature counts match the source, and its saved formula-error scan found no errors. Calc changed the text of some formulas on save; this is not a claim of full formula equivalence or cross-application compatibility. The original paid workbook was unchanged.
 
 The workbook has a 300-record limit per data tab; extra rows are outside the template's linked ranges. The previews do not establish Excel or Google Sheets compatibility. Excel, Google Sheets, live GUI input, dropdown interaction, and audio were not tested for these assets. The displayed names and contact details are fictional.
+
+## Optional product-page copy draft
+
+These are draft lines for optional use on the product page, separate from the worksheet-preview verification above. They were prepared with AI assistance and make no compatibility claim.
+
+**Optional rating ask:** If you have used Client Tracker and would like to leave a rating or short review, an honest one is welcome. Positive, mixed, or critical feedback is useful; no pressure. If you have not used it, please skip rating it.
+
+**Also by Bigshadex:**
+- PulseLite free Godot sample: https://bigshadex.itch.io/pulselite-ui-sfx-free
+- Menu Kit: https://bigshadex.itch.io/pulselite-ui-sfx
+- Sci-Fi UI: https://bigshadex.itch.io/pulselite-scifi-ui
+- Horror UI: https://bigshadex.itch.io/pulselite-horror-ui
+- PulseLite Complete: https://bigshadex.itch.io/pulselite-complete
