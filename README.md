@@ -10,7 +10,7 @@ Tested on Godot 4.7.2. GDScript only; no dependencies.
 
 ## Install
 
-- **Godot AssetLib:** search for “PulseLite UI Sounds” and install it into your project.
+- **Godot Asset Store:** install it in one click from https://store.godotengine.org/asset/bigshadex/pulselite-ui-sounds-free-button-menu-sfx-autoload/
 - **Manual install:** copy the addons/pulselite_ui/ folder from this repository into your project’s addons/ folder.
 
 Then enable **PulseLite UI SFX (free sample)** under *Project > Project Settings > Plugins*. Enabling the plugin registers the <code>PulseLiteUI</code> autoload. You can instead add res://addons/pulselite_ui/PulseLiteUI.gd as an autoload named PulseLiteUI.
@@ -66,12 +66,12 @@ Optional: [PulseLite Free preset for Maaack’s UI Sound Controller](addons/puls
 
 ## Packs
 
-The linked paid downloads have their current prices and full licence terms on itch.io. WAV and OGG copies are alternate formats of the same recordings; the format copies are not counted as extra sounds.
+The linked paid downloads have their current prices and full licence terms on itch.io. WAV and OGG copies are alternate formats of the same sounds; the format copies are not counted as extra sounds.
 
-- **Menu Kit:** 200 recordings across 13 sound categories mapped to 14 named UI events (toggle has 8 on and 7 off sounds); WAV and OGG; Godot 4 and Unity helper scripts. [View Menu Kit on itch.io](https://bigshadex.itch.io/pulselite-ui-sfx)
-- **Sci-Fi UI:** 104 recordings across the same 14 named events; WAV and OGG; Godot 4 and Unity helper scripts. [View Sci-Fi UI on itch.io](https://bigshadex.itch.io/pulselite-scifi-ui)
-- **Horror UI:** 104 recordings across the same 14 named events; WAV and OGG; Godot 4 and Unity helper scripts. [View Horror UI on itch.io](https://bigshadex.itch.io/pulselite-horror-ui)
-- **PulseLite Complete:** all three paid packs, with 408 distinct recordings in total (200 Menu + 104 Sci-Fi + 104 Horror), in WAV and OGG formats. [View Complete on itch.io](https://bigshadex.itch.io/pulselite-complete)
+- **Menu Kit:** 200 sounds across 13 sound categories mapped to 14 named UI events (toggle has 8 on and 7 off sounds); WAV and OGG; Godot 4 and Unity helper scripts. [View Menu Kit on itch.io](https://bigshadex.itch.io/pulselite-ui-sfx)
+- **Sci-Fi UI:** 104 sounds across the same 14 named events; WAV and OGG; Godot 4 and Unity helper scripts. [View Sci-Fi UI on itch.io](https://bigshadex.itch.io/pulselite-scifi-ui)
+- **Horror UI:** 104 sounds across the same 14 named events; WAV and OGG; Godot 4 and Unity helper scripts. [View Horror UI on itch.io](https://bigshadex.itch.io/pulselite-horror-ui)
+- **PulseLite Complete:** all three paid packs, with 408 distinct sounds in total (200 Menu + 104 Sci-Fi + 104 Horror), in WAV and OGG formats. [View Complete on itch.io](https://bigshadex.itch.io/pulselite-complete)
 
 Paid downloads include Unity helper scripts that are compile-checked but have not been tested inside the Unity editor; they are not included in this free Godot repository. The browser preview plays the free 20-sound mock menu or three listening-only teasers from the selected paid style. It does not audition every sound in a paid pack.
 
